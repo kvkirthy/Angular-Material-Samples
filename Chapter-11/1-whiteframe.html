@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <style>
+        pre{
+            background-color: lightgrey;
+        }
+    </style>
+    <title>Angular Material Sample</title>
+</head>
+<!-- 
+    bootstrap to using the sampleApp module. Refer to app/main.js
+-->
+<body ng-app="sampleApp" layout="column" layout-fill>
+    <div>
+        <span ng-init="isMedTall=false"></span>        
+
+        <!-- 
+           -- For a medium tall toolbar use CSS class md-medium-tall
+           -- ng-class allows dynamically apply the class based on selection on the page.
+           
+           -- Following is basic usage of Toolbar 
+           -- Identify labels and buttons on the toolbar with the CSS class md-toolbar-tools
+           -- The layout-padding attribute helps add padding around the elements.
+       -->
+        <md-toolbar layout-padding class="md-toolbar-tools" ng-class="{'md-medium-tall':isMedTall}">
+            <h3>Whiteframes</h3>
+        </md-toolbar>
+
+        <!--
+            -- Wrap scoll enabled content in md-content directive
+            -- Using layout="column" aligns all control vertically within the directive.
+            -- The layout-padding attribute helps add padding around the elements.
+         -->
+        <md-content layout="row" layout-padding>
+            <div md-whiteframe flex layout-margin style="min-height:200px">
+                Default
+            </div>
+            <div md-whiteframe="10dp" flex layout-margin style="min-height:200px">
+                Whiteframe - 10dp
+            </div>
+            <div md-whiteframe="16dp" flex layout-margin style="min-height:200px">
+                Whiteframe - 16dp
+            </div>
+            <div md-whiteframe="24dp" flex layout-margin style="min-height:200px">
+                Whiteframe - 24dp
+            </div>                                    
+        </md-content>
+    </div>
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+</html>

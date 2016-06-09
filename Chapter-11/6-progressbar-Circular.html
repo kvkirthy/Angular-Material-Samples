@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.0.8/angular-material.css">
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    <style>
+        pre {
+            background-color: lightgray;
+        }
+    </style>
+
+    <title>E6 Angular Material Sample</title>
+</head>
+
+<body ng-app="sampleApp" ng-cloak layout="column">
+
+    <script>
+        angular.module("sampleApp", ["ngMaterial"])
+           .controller('sampleController', function($scope, $timeout){
+               $scope.progress=1;
+               $scope.buffer=5;
+               
+               function updateProgress(){
+                    $timeout(function(){
+                        $scope.progress += 1;     // increment progress by 1.
+                        $scope.buffer += 5; // increment buffer value (image a video file)
+                        if($scope.progress<=100){ // Continue to call update progress recursively till progress is 100%
+                            console.log($scope.progress);
+                            updateProgress();
+                              
+                        }
+                    }, 200);                   
+               }
+               
+               updateProgress();
+
+           });
+    </script>
+
+    <md-toolbar layout-padding>
+        <div class="md-toolbar-tools">
+            <h2>Circular Progress Bar Sample</h2>
+        </div>
+    </md-toolbar>
+
+    <md-content layout-padding layout="column" ng-controller="sampleController">
+
+        <div layout="row">
+            <div flex>
+                Determinate
+                <br>
+                <md-progress-circular md-mode="determinate" value="{{progress}}"></md-progress-circular>
+            </div>
+
+            <div flex>
+                Indeterminate
+                <br>
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
+
+        </div>
+
+
+
+
+
+        <pre>
+            <code>
+                
+                &lt;md-progress-circular md-mode=&quot;determinate&quot; value=&quot;{{progress}}&quot;&gt;&lt;/md-progress-circular&gt;
+
+                &lt;md-progress-circular md-mode=&quot;indeterminate&quot;&gt;&lt;/md-progress-circular&gt;
+
+                
+                
+               Following code mimics long running process.
+                       angular.module("sampleApp", ["ngMaterial"])
+           .controller('sampleController', function($scope, $timeout){
+               $scope.progress=1;
+               $scope.buffer=5;
+               
+               function updateProgress(){
+                    $timeout(function(){
+                        $scope.progress += 1;     // increment progress by 1.
+                        $scope.buffer += 5; // increment buffer value (image a video file)
+                        if($scope.progress<=100){ // Continue to call update progress recursively till progress is 100%
+                            console.log($scope.progress);
+                            updateProgress();
+                              
+                        }
+                    }, 200);                   
+               }
+               
+               updateProgress();
+
+           });
+            </code>
+        </pre>
+
+    </md-content>
+
+
+
+
+</body>
+
+</html>

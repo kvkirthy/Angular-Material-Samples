@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+
+    <style>
+        pre {
+            background-color: lightgray;
+        }
+    </style>
+    <title>E6 Angular Material Sample</title>
+</head>
+
+<body ng-app="sampleApp" ng-cloak layout="column">
+
+    <script>
+        angular.module("sampleApp", ["ngMaterial"])
+           .controller('swipeSampleController', function($scope){
+              $scope.swipeHandler = function(){
+                  console.log("Swiped !");
+              } 
+           });
+    </script>
+
+    <md-toolbar layout-padding>
+        <div class="md-toolbar-tools">
+            <h2>Swipe Sample</h2>
+        </div>
+    </md-toolbar>
+
+    <md-content layout-padding layout="column" flex layout-padding layout-align="top center" ng-controller="swipeSampleController">
+        <div md-swipe-right="swipeHandler()" class="md-raised md-primary"> > > > Swipe Right > > > </div>
+        <div md-swipe-left="swipeHandler()">
+            < < < Swipe Left < < < </div>
+                <div md-swipe-up="swipeHandler()"> ^ ^ ^ Swipe Up ^ ^ ^ </div>
+                <div md-swipe-down="swipeHandler()"> <sub> v v v </sub> Swipe Down <sub> v v v </sub> </div>
+
+                <pre>
+                    <code>
+        &lt;div md-swipe-right=&quot;swipeHandler()&quot; class = &quot;md-raised md-primary&quot;&gt; &gt; &gt; &gt; Swipe Right &gt; &gt; &gt; &lt;/div&gt;
+        &lt;div md-swipe-left=&quot;swipeHandler()&quot; &gt; &lt; &lt; &lt; Swipe Left &lt; &lt; &lt; &lt;/div&gt;
+        &lt;div md-swipe-up=&quot;swipeHandler()&quot; &gt; ^ ^ ^ Swipe Up ^ ^ ^ &lt;/div&gt;
+        &lt;div md-swipe-down=&quot;swipeHandler()&quot; &gt; &lt;sub&gt; v v v &lt;/sub&gt; Swipe Down  &lt;sub&gt; v v v &lt;/sub&gt; &lt;/div&gt;
+                       
+            </code>
+                </pre>
+
+
+    </md-content>
+
+
+
+</body>
+
+</html>

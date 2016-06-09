@@ -1,0 +1,195 @@
+<html>
+
+<head>
+    <title>FAB Speed Dial</title>
+
+    <style>
+        section {
+            background-color: lightblue
+        }
+        
+        pre {
+            background-color: lightgray
+        }
+    </style>
+</head>
+
+<body ng-app="sampleApp" layout="column">
+    <md-toolbar layout-padding class="md-toolbar-tools" layout="row">
+        <h3>Menu Bar Sample</h3>
+        <span>&nbsp;</span>
+        <!-- Page level actions positioned on toolbar. Actions are collapsed into a menu -->
+    </md-toolbar>
+    <md-content layout-padding flex>
+
+        <md-menu-bar>
+            <md-menu md-offset="0 4">
+                <button ng-click="$mdOpenMenu()">File</button>
+                <md-menu-content width="2">
+                    <md-menu-item>
+                        <md-button>
+                            Open
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            Save
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            Close
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+            <md-menu md-offset="0 4">
+                <button ng-click="$mdOpenMenu()">Edit</button>
+                <md-menu-content width="2">
+                    <md-menu-item>
+                        <md-button>
+                            Cut
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            Copy
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-menu>
+                            <md-button>Paste</md-button>
+                            <md-menu-content width="2">
+                                <md-menu-item>
+                                    <md-button>Paste Special</md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button>Paste as text</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+            <md-menu md-offset="0 4">
+                <button ng-click="$mdOpenMenu()">Help</button>
+                <md-menu-content width="2">
+                    <md-menu-item>
+                        <md-button>
+                            Help
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            Documentation
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-divider></md-divider>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            About
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+        </md-menu-bar>
+
+        <pre>
+            <code>
+         &lt;md-menu-bar&gt;
+            &lt;md-menu md-offset=&quot;0 4&quot;&gt;
+                &lt;button ng-click=&quot;$mdOpenMenu()&quot;&gt;File&lt;/button&gt;
+                &lt;md-menu-content width=&quot;2&quot;&gt;
+                    &lt;md-menu-item&gt;
+                        &lt;md-button&gt;
+                            Open
+                        &lt;/md-button&gt;
+                    &lt;/md-menu-item&gt;
+                    &lt;md-menu-item&gt;
+                        &lt;md-button&gt;
+                            Save
+                        &lt;/md-button&gt;
+                    &lt;/md-menu-item&gt;
+                    &lt;md-menu-item&gt;
+                        &lt;md-button&gt;
+                            Close
+                        &lt;/md-button&gt;
+                    &lt;/md-menu-item&gt;
+                &lt;/md-menu-content&gt;
+            &lt;/md-menu&gt;
+
+            &lt;md-menu md-offset=&quot;0 4&quot;&gt;
+                &lt;button ng-click=&quot;$mdOpenMenu()&quot;&gt;Edit&lt;/button&gt;
+                &lt;md-menu-content width=&quot;2&quot;&gt;
+                    &lt;md-menu-item&gt;
+                        &lt;md-button&gt;
+                            Cut
+                        &lt;/md-button&gt;
+                    &lt;/md-menu-item&gt;
+                    &lt;md-menu-item&gt;
+                        &lt;md-button&gt;
+                            Copy
+                        &lt;/md-button&gt;
+                    &lt;/md-menu-item&gt;
+                    &lt;md-menu-item&gt;
+                        &lt;md-menu&gt;
+                            &lt;md-button&gt;Paste&lt;/md-button&gt;
+                            &lt;md-menu-content width=&quot;2&quot;&gt;
+                                &lt;md-menu-item&gt;
+                                    &lt;md-button&gt;Paste Special&lt;/md-button&gt;
+                                &lt;/md-menu-item&gt;
+                                &lt;md-menu-item&gt;
+                                    &lt;md-button&gt;Paste as text&lt;/md-button&gt;
+                                &lt;/md-menu-item&gt;
+                            &lt;/md-menu-content&gt;
+                        &lt;/md-menu&gt;
+                    &lt;/md-menu-item&gt;
+                &lt;/md-menu-content&gt;
+            &lt;/md-menu&gt;
+
+            &lt;md-menu md-offset=&quot;0 4&quot;&gt;
+                &lt;button ng-click=&quot;$mdOpenMenu()&quot;&gt;Help&lt;/button&gt;
+                &lt;md-menu-content width=&quot;2&quot;&gt;
+                    &lt;md-menu-item&gt;
+                        &lt;md-button&gt;
+                            Help
+                        &lt;/md-button&gt;
+                    &lt;/md-menu-item&gt;
+                    &lt;md-menu-item&gt;
+                        &lt;md-button&gt;
+                            Documentation
+                        &lt;/md-button&gt;
+                    &lt;/md-menu-item&gt;
+                    &lt;md-menu-item&gt;
+                        &lt;md-divider&gt;&lt;/md-divider&gt;
+                    &lt;/md-menu-item&gt;
+                    &lt;md-menu-item&gt;
+                        &lt;md-button&gt;
+                            About
+                        &lt;/md-button&gt;
+                    &lt;/md-menu-item&gt;
+                &lt;/md-menu-content&gt;
+            &lt;/md-menu&gt;
+
+        &lt;/md-menu-bar&gt;     
+            </code>
+        </pre>
+    </md-content>
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+
+</html>

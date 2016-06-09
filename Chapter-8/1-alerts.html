@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <!--<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>-->
+    <style>
+        .pink {
+            background: lightpink;
+        }
+        
+        .green {
+            background: lightgreen;
+        }
+        
+        .yellow {
+            background: lightyellow;
+        }
+        
+        .blue {
+            background: lightblue;
+        }
+        
+        .gray {
+            background: lightgray;
+        }
+        
+        pre {
+            background-color: lightgrey;
+        }
+    </style>
+    <title>E6 Angular Material Sample</title>
+</head>
+
+<body ng-app="sampleApp" ng-cloak layout="column">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Alert and Confirm Dialogues</h2>
+        </div>
+    </md-toolbar>
+    <md-content layout-padding layout="column" ng-controller="dialogAndAlertController" layout-padding>
+
+        <!-- 
+             Show simple Angular Material style alert message on click of the button
+             Use showSimpleMessage() controller function for showing the alert message.
+             
+            // Create alert message object. 
+            var aSimpleAlert = $mdDialog
+            .alert()
+            .parent(angular.element(document.body))
+            .title("Welcome")
+            .textContent(" This is a simple alert message")
+            .ok("Okay")
+            .openFrom("#left")
+            ;             
+             
+            $scope.showSimpleMessage = function(event){
+                // Show the alert message created earlier.
+                $mdDialog.show(aSimpleAlert);       
+                
+                // Demonstrates hiding alert message (after a while, 5 seconds). 
+                $timeout(function(){
+                    $scope.hideAlertMessage();
+                }, 5000);
+            };            
+          -->
+        <div>
+            <md-button ng-click="showSimpleMessage($event)" class="md-raised md-primary">Click to show alert</md-button>
+        </div>
+
+        <pre>
+            <code>
+         &lt;!-- 
+             Show simple Angular Material style alert message on click of the button
+             Use showSimpleMessage() controller function for showing the alert message.
+             
+            // Create alert message object. 
+            var aSimpleAlert = $mdDialog
+            .alert()
+            .parent(angular.element(document.body))
+            .title(&quot;Welcome&quot;)
+            .textContent(&quot; This is a simple alert message&quot;)
+            .ok(&quot;Okay&quot;)
+            ;             
+             
+            $scope.showSimpleMessage = function(event){
+                // Show the alert message created earlier.
+                $mdDialog.show(aSimpleAlert);       
+                
+                // Demonstrates hiding alert message (after a while, 5 seconds). 
+                $timeout(function(){
+                    $scope.hideAlertMessage();
+                }, 5000);
+            };            
+          --&gt;
+        &lt;md-button ng-click=&quot;showSimpleMessage($event)&quot;&gt;Alert Dialog&lt;/md-button&gt;                
+            </code>
+        </pre>
+
+
+        <!-- 
+            On click of this button, show confirm dialog using a controller function 
+            
+            // Create confirm dialog object. 
+            var aConfirmDialog = $mdDialog
+            .confirm()
+            .parent(angular.element(document.body))
+            .title("Confirm")
+            .textContent(" Are you sure to continue?")
+            .ok("Yes")
+            .cancel("No")
+            .openFrom("#left")
+            ;          
+            
+            $scope.showConfirmDialog = function(event){
+                // Show confirm dialog. Use the object created earlier.
+                    $mdDialog.show(aConfirmDialog).then(function(result){
+                        // Runs this code when user responds positively on confirm dailog (ok button)
+                        console.log(result);
+                        console.log(result + " - User selected yes");
+                    }, function() {
+                        // runs this code when user cancels the dialog.
+                        console.log("User selected no");
+                    });       
+                    
+                    // Demonstrate closing the dialog automatically after a while. 
+                    $timeout(function(){
+                        $mdDialog.hide(aConfirmDialog);
+                    }, 5000);
+                };             
+        -->
+        <div>
+            <md-button ng-click="showConfirmDialog($event)" class="md-primary md-raised">Click to show confirm dialog</md-button>
+        </div>
+        <pre>
+            <code>
+        &lt;!-- 
+            On click of this button, show confirm dialog using a controller function 
+            
+            // Create confirm dialog object. 
+            var aConfirmDialog = $mdDialog
+            .confirm()
+            .parent(angular.element(document.body))
+            .title(&quot;Confirm&quot;)
+            .textContent(&quot; Are you sure to continue?&quot;)
+            .ok(&quot;Yes&quot;)
+            .cancel(&quot;No&quot;)
+            ;          
+            
+            $scope.showConfirmDialog = function(event){
+                // Show confirm dialog. Use the object created earlier.
+                    $mdDialog.show(aConfirmDialog).then(function(result){
+                        // Runs this code when user responds positively on confirm dailog (ok button)
+                        console.log(result);
+                        console.log(result + &quot; - User selected yes&quot;);
+                    }, function() {
+                        // runs this code when user cancels the dialog.
+                        console.log(&quot;User selected no&quot;);
+                    });       
+                    
+                    // Demonstrate closing the dialog automatically after a while. 
+                    $timeout(function(){
+                        $mdDialog.hide(aConfirmDialog);
+                    }, 5000);
+                };             
+        --&gt;
+        &lt;md-button ng-click=&quot;showConfirmDialog($event)&quot; class=&quot;md-primary&quot;&gt;Confirm Dialog&lt;/md-button&gt;
+                        
+            </code>
+        </pre>
+
+    </md-content>
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+
+</body>
+
+</html>

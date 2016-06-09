@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    
+    <style>
+        pre{
+            background-color: lightgray;
+        }
+    </style>
+
+	<title>Angular Material Sample</title>
+</head>
+<body ng-app="sampleApp" ng-cloak>
+        <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>Typeahead - Form Fields Samples</h3>
+    </md-toolbar>
+    <md-content flex layout="row" layout-padding>
+        <div flex ng-controller="selectSampleController" layout="column">
+            
+            <!--
+               Use element/directive md-autocomplete for Typeahead
+               Use md-select-on-match="true" to autoselect an item, if exact filter string has been typed in. 
+               Variable set on md-search-text property will hold keyed in filter string. 
+               Selected item is available on variable set for attribute md-selected-item
+               
+               Items on the autocomplete change as a JS function filterSuperheroes filters by search string
+                $scope.filterSuperheroes = function(filterString){
+                    var superheroes = [
+                            "Iron Man", 
+                            "Mowgli", 
+                            "Spiderman", 
+                            "Superman",
+                            "Chota Bheem"
+                        ];     
+                        
+                    if(filterString){
+                        return superheroes.filter(function(item){
+                            return item.toLowerCase().indexOf(filterString.toLowerCase()) >= 0;
+                        });
+                        
+                    }else{
+                        return superheroes;
+                    }
+                        
+                };             
+            -->
+            <md-autocomplete flex-gt-sm="50" md-select-on-match="true" md-search-text="filterString" md-selected-item="selectedVariableOnScope" md-items="item in filterSuperheroes(filterString)">
+                <!-- template when there is a match
+                Highlight logic (on the text field/dropdown editable field)
+                    1. "i" for case insensitive match on highlighted text.
+
+                    2. "^" for highlighting only items beginning with the filter string.
+
+                    3. "$" for highlighting only items ending with the filter string.                
+                
+                 -->
+                <md-item-template>
+                    <span md-highlight-flags="i$g" md-highlight-text="filterString">{{item}}</span>
+                </md-item-template>
+                <!-- template when there are no results -->
+                <md-not-found>
+                    No results.
+                </md-not-found>
+            </md-autocomplete>
+            <pre>
+                <code>
+       &lt;div flex ng-controller=&quot;selectSampleController&quot; layout=&quot;column&quot;&gt;
+            
+            &lt;!--
+               Use element/directive md-autocomplete for Typeahead
+               Use md-select-on-match=&quot;true&quot; to autoselect an item, if exact filter string has been typed in. 
+               Variable set on md-search-text property will hold keyed in filter string. 
+               Selected item is available on variable set for attribute md-selected-item
+               
+               Items on the autocomplete change as a JS function filterSuperheroes filters by search string
+                $scope.filterSuperheroes = function(filterString){
+                    var superheroes = [
+                            &quot;Iron Man&quot;, 
+                            &quot;Mowgli&quot;, 
+                            &quot;Spiderman&quot;, 
+                            &quot;Superman&quot;,
+                            &quot;Chota Bheem&quot;
+                        ];     
+                        
+                    if(filterString){
+                        return superheroes.filter(function(item){
+                            return item.toLowerCase().indexOf(filterString.toLowerCase()) &gt;= 0;
+                        });
+                        
+                    }else{
+                        return superheroes;
+                    }
+                        
+                };             
+            --&gt;
+            &lt;md-autocomplete flex-gt-sm=&quot;50&quot; md-select-on-match=&quot;true&quot; md-search-text=&quot;filterString&quot; md-selected-item=&quot;selectedVariableOnScope&quot; md-items=&quot;item in filterSuperheroes(filterString)&quot;&gt;
+                &lt;!-- template when there is a match
+                Highlight logic (on the text field/dropdown editable field)
+                    1. &quot;i&quot; for case insensitive match on highlighted text.
+
+                    2. &quot;^&quot; for highlighting only items beginning with the filter string.
+
+                    3. &quot;$&quot; for highlighting only items ending with the filter string.                
+                
+                 --&gt;
+                &lt;md-item-template&gt;
+                    &lt;span md-highlight-flags=&quot;i$g&quot; md-highlight-text=&quot;filterString&quot;&gt;{{item}}&lt;/span&gt;
+                &lt;/md-item-template&gt;
+                &lt;!-- template when there are no results --&gt;
+                &lt;md-not-found&gt;
+                    No results.
+                &lt;/md-not-found&gt;
+            &lt;/md-autocomplete&gt;                    
+                </code>
+            </pre>
+            
+   
+    </md-content>
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+>
+
+</body>
+</html>

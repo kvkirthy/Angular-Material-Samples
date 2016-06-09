@@ -1,0 +1,136 @@
+<html>
+
+<head>
+    <title>Action Buttons Sample</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <style>
+        section {
+            background-color: lightblue
+        }
+        
+        pre {
+            background-color: lightgray
+        }
+    </style>
+
+</head>
+
+<body ng-app="sampleApp" ng-cloak>
+
+    <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>Flex with Resonsive Breakpoints</h3>
+    </md-toolbar>
+
+    <md-content>
+        <pre>
+            <code>
+        &lt;div layout=&quot;row&quot; flex&gt;
+            &lt;!-- flex-gt-md=10. Flex 10% on a greater than medium screen --&gt;
+            &lt;div flex-gt-md=&quot;10&quot;&gt;&lt;/div&gt;
+            &lt;div flex-gt-md=&quot;80&quot; flex&gt;
+                &lt;!-- flex fills available space by default. For a screen greater than medium fill up to 80% --&gt;
+                &lt;strong&gt;Shows space on left and right on a big screen. As you resize the window smaller, will hide left and right columns&lt;/strong&gt;
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            &lt;/div&gt;
+
+            &lt;!-- flex-gt-md=10. Flex 10% on a greater than medium screen --&gt;
+            &lt;div flex-gt-md=&quot;10&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;                
+            </code>
+        </pre>
+        
+        <div>&nbsp;</div>
+        <div layout="row" flex>
+            <!-- flex-gt-md=10. Flex 10% on a greater than medium screen -->
+            <div flex-gt-md="10"></div>
+            <div flex-gt-md="80" flex>
+                <!-- flex fills available space by default. For a screen greater than medium fill up to 80% -->
+                <strong>Shows space on left and right on a big screen. As you resize the window smaller, will hide left and right columns</strong>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas
+                porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet
+                commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant
+                morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris
+                et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque
+                at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Lorem
+                ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna
+                sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra
+                imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada
+                fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. <br>Donec
+                laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris
+                eget neque at sem venenatis eleifend. Ut nonummy. Lorem ipsum dolor sit amet, consectetuer adipiscing el<br>it.
+                Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero,
+                sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque
+                habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede.
+                Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scel<br>erisque
+                at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Lorem
+                ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna
+                <br>sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra
+                imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada
+                fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Done<br><br><br>c
+                laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris
+                eget neque at <br>sem venenatis eleifend. Ut nonummy. Lorem ipsum dolor sit amet, consectetuer adipiscing
+                elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada
+                libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra
+                nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui
+                purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend.
+                Ut nonummy. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce
+                posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+                Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus
+                et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem.
+                In porttitor. <br>Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium
+                mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Lorem ipsum dolor sit amet, consectetuer
+                adipiscing el<br>it. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus
+                lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus
+                a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin
+                pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse
+                dui purus, scel<br>erisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis
+                eleifend. Ut nonummy. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue
+                massa. Fusce posuere, magna <br>sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna
+                eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique
+                senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean
+                nec lorem. In porttitor. Done<br><br><br>c laoreet nonummy augue. Suspendisse dui purus, scelerisque at,
+                vulputate vitae, pretium mattis, nunc. Mauris eget neque at <br>sem venenatis eleifend. Ut nonummy. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero,
+                sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque
+                habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede.
+                Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque
+                at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Lorem
+                ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna
+                sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra
+                imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada
+                fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. <br>Donec
+                laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris
+                eget neque at sem venenatis eleifend. Ut nonummy. Lorem ipsum dolor sit amet, consectetuer adipiscing el<br>it.
+                Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero,
+                sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque
+                habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede.
+                Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scel<br>erisque
+                at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Lorem
+                ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna
+                <br>sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra
+                imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada
+                fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Done<br><br><br>c
+                laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris
+                eget neque at <br>sem venenatis eleifend. Ut nonummy.
+            </div>
+
+            <!-- flex-gt-md=10. Flex 10% on a greater than medium screen -->
+            <div flex-gt-md="10"></div>
+        </div>
+    </md-content>
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+
+</html>

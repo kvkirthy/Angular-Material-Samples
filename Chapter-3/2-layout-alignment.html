@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>Action Buttons Sample</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <style>
+        section {
+            background-color: lightblue
+        }
+        
+        pre {
+            background-color: lightgray
+        }
+    </style>
+
+</head>
+
+<body ng-app="sampleApp" ng-cloak>
+
+    <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>Layout Align Samples</h3>
+    </md-toolbar>
+
+    <md-content layout-padding layout="column">
+        <strong>layout-align values "start start"" and "end end"" mean the same irrespective of layout value</strong>
+        <div layout="column" style="min-height: 200px; background-color: skyblue" layout-align="start start">
+            <img src="/images/ic_lightbulb_outline_black_48px.svg">
+        </div>
+        <div layout="row" style="min-height: 200px; background-color: yellow" layout-align="end end">
+            <img src="/images/ic_lightbulb_outline_black_48px.svg">
+        </div>           
+        <strong>However, for "start end"" layout value changes the underlying alignment</strong>
+        <div layout="column" style="min-height: 200px; background-color: skyblue" layout-align="start end">
+            <img src="/images/ic_lightbulb_outline_black_48px.svg">
+        </div>
+        <div layout="row" style="min-height: 200px; background-color: yellow" layout-align="start end">
+            <img src="/images/ic_lightbulb_outline_black_48px.svg">
+        </div>    
+        
+        <pre>
+            <code>
+        &lt;strong&gt;layout-align values &quot;start start&quot;&quot; and &quot;end end&quot;&quot; mean the same irrespective of layout value&lt;/strong&gt;
+        &lt;div layout=&quot;column&quot; style=&quot;min-height: 200px; background-color: skyblue&quot; layout-align=&quot;start start&quot;&gt;
+            &lt;img src=&quot;/images/ic_lightbulb_outline_black_48px.svg&quot;&gt;
+        &lt;/div&gt;
+        &lt;div layout=&quot;row&quot; style=&quot;min-height: 200px; background-color: yellow&quot; layout-align=&quot;end end&quot;&gt;
+            &lt;img src=&quot;/images/ic_lightbulb_outline_black_48px.svg&quot;&gt;
+        &lt;/div&gt;           
+        &lt;strong&gt;However, for &quot;start end&quot;&quot; layout value changes the underlying alignment&lt;/strong&gt;
+        &lt;div layout=&quot;column&quot; style=&quot;min-height: 200px; background-color: skyblue&quot; layout-align=&quot;start end&quot;&gt;
+            &lt;img src=&quot;/images/ic_lightbulb_outline_black_48px.svg&quot;&gt;
+        &lt;/div&gt;
+        &lt;div layout=&quot;row&quot; style=&quot;min-height: 200px; background-color: yellow&quot; layout-align=&quot;start end&quot;&gt;
+            &lt;img src=&quot;/images/ic_lightbulb_outline_black_48px.svg&quot;&gt;
+        &lt;/div&gt;                 
+            </code>
+        </pre>
+    </md-content>
+
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+
+</html>

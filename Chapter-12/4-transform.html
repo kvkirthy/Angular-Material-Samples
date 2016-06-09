@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        .rowFill {
+            min-height: 100%;
+        }
+         pre {
+            background-color: lightgray;
+        }
+        
+        .pink {
+            background-color: lightpink;
+        }
+        
+        .green {
+            background-color: lightgreen;
+        }
+        
+        .blue {
+            background-color: lightblue;
+        }
+        
+        .yellow {
+            background-color: lightyellow;
+        }
+        
+        .gray {
+            background-color: lightgray
+        }       
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+
+    <title>Angular Material Sample</title>
+</head>
+
+<body ng-app="sampleApp" flex>
+
+    <div ng-controller="transformSampleController">
+        <md-toolbar>
+
+            <div class="md-toolbar-tools" layout="row">
+                <h2>Transform - resize window for transform demonstration</h2>
+                <span flex></span>
+            </div>
+
+        </md-toolbar>
+
+
+        <md-content layout="column">
+            <md-grid-list hide show-gt-xs md-cols="2" md-cols-gt-md="3" md-row-height="16:9">
+                <md-grid-tile md-rowspan-gt-sm="{{($index===0)?2:1}}" ng-class="item.background" ng-click="null" ng-repeat="item in superheroes">
+                    <img style="max-width:100px" ng-src="{{item.imageUrl}}" />
+
+                    <md-grid-tile-footer layout-padding>
+                        <span>{{item.category}}</span>
+                    </md-grid-tile-footer>
+                    <md-grid-tile-header layout-padding>
+                        <h2>{{item.name}}</h2>
+                    </md-grid-tile-header>
+                </md-grid-tile>
+            </md-grid-list>
+
+            <md-list hide show-xs>
+                <md-list-item class="md-2-line" ng-repeat="item in superheroes" ng-click="null">
+                    <img ng-src="{{item.imageUrl}}" class="md-avatar">
+                    <div class="md-list-item-text" layout="column">
+                        <strong>{{item.name}}</strong>
+                        <div>{{item.category}}</div>
+                    </div>
+                </md-list-item>
+            </md-list>
+
+
+        </md-content>
+    </div>
+
+</body>
+
+</html>

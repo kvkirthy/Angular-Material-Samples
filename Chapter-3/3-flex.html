@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <title>Action Buttons Sample</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <style>
+        section {
+            background-color: lightblue
+        }
+        
+        pre {
+            background-color: lightgray
+        }
+    </style>
+
+</head>
+
+<body ng-app="sampleApp" ng-cloak>
+
+    <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>Flex</h3>
+    </md-toolbar>
+
+    <md-content layout-padding layout="column">
+        <strong>Flex to occupy all available space</strong>
+
+        <!-- Following row has two text fields. Both together fill the row -->
+        <div layout="row" layout-padding>
+            <input flex type="text" placeholder="Text box 1 in a row"></input>
+            <input flex type="text" placeholder="Text box 2 in a row"></input>
+        </div>
+        <!-- Following row has just one text field. Whole row is taken by the text field-->
+        <div layout="row" layout-padding>
+            <input flex type="text" placeholder="Only text box in a row"></input>
+        </div>
+        <!-- Here container is a column. Hence second element moves to the next row in the column-->
+        <div layout="column" layout-padding>
+            <input flex type="text" placeholder="Text field 1 in a column"></input>
+            <input flex type="text" placeholder="Text field 2 in a column"></input>
+        </div>
+
+        <pre>
+            <code>
+        &lt;!-- Following row has two text fields. Both together fill the row --&gt;
+        &lt;div layout=&quot;row&quot; layout-padding&gt;
+            &lt;input flex type=&quot;text&quot; placeholder=&quot;Text box 1 in a row&quot;&gt;&lt;/input&gt;
+            &lt;input flex type=&quot;text&quot; placeholder=&quot;Text box 2 in a row&quot;&gt;&lt;/input&gt;
+        &lt;/div&gt;
+        &lt;!-- Following row has just one text field. Whole row is taken by the text field--&gt;
+        &lt;div layout=&quot;row&quot; layout-padding&gt;
+            &lt;input flex type=&quot;text&quot; placeholder=&quot;Only text box in a row&quot;&gt;&lt;/input&gt;
+        &lt;/div&gt;
+        &lt;!-- Here container is a column. Hence second element moves to the next row in the column--&gt;
+        &lt;div layout=&quot;column&quot; layout-padding&gt;
+            &lt;input flex type=&quot;text&quot; placeholder=&quot;Text field 1 in a column&quot;&gt;&lt;/input&gt;
+            &lt;span&gt;&amp;nbsp;&lt;/span&gt;
+            &lt;input flex type=&quot;text&quot; placeholder=&quot;Text field 2 in a column&quot;&gt;&lt;/input&gt;
+        &lt;/div&gt;                
+            </code>
+        </pre>
+
+        <strong>Define size of each text field using flex</strong>
+        <div layout="row" layout-padding>
+            <input flex="33" type="text" placeholder="Provide full name"></input>
+            <input flex="66" type="text" placeholder="Provide complete address"></input>
+        </div>
+
+        <pre>
+            <code>
+        
+        &lt;!--        
+            Apply flex="33" results in 100/3. And flex="66" results in 200/3. Two elements with flex="33" and flex ="66", 
+            together will take up 100% space. Sum of the two numbers is 100.
+        --&gt       
+        &lt;div layout=&quot;row&quot; layout-padding&gt;
+            &lt;input flex=&quot;33&quot; type=&quot;text&quot; placeholder=&quot;Provide full name&quot;&gt;&lt;/input&gt;
+            &lt;input flex=&quot;66&quot; type=&quot;text&quot; placeholder=&quot;Provide complete address&quot;&gt;&lt;/input&gt;
+        &lt;/div&gt;                
+            </code>
+        </pre>
+
+    </md-content>
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+
+</html>

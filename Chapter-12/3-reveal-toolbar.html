@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Angular Material Sample</title>
+</head>
+
+<body ng-app="sampleApp" layout="column">
+    <div ng-controller="sampleController">
+        <md-toolbar class="md-secondary">
+
+            <div class="md-toolbar-tools" layout="row">
+                <h2>Reveal - resize window</h2>
+                <span flex></span>
+                <md-button ng-click="null">
+                    <md-icon md-font-set="material-icons">shopping</md-icon>
+                </md-button>
+                <md-button ng-click="null">
+                    <md-icon md-font-set="material-icons">comment</md-icon>
+                </md-button>
+                <md-button ng-click="null" hide show-gt-xs>
+                    <md-icon md-font-set="material-icons">add_a_photo</md-icon>
+                </md-button>
+
+                <md-button ng-click="null" hide show-gt-xs>
+                    <md-icon md-font-set="material-icons">favorite </md-icon>
+                </md-button>
+
+                <md-button ng-click="null" hide show-gt-sm>
+                    <md-icon md-font-set="material-icons">exit_to_app</md-icon>
+                </md-button>
+                
+                <md-button ng-click="null" hide show-gt-sm>
+                    <md-icon md-font-set="material-icons">bookmark</md-icon>
+                </md-button>
+
+                <md-menu hide-gt-sm>
+                    <!-- Trigger element is a md-button with an icon -->
+                    <md-button ng-click="$mdOpenMenu($event)">
+                        <md-icon md-font-set="material-icons">more_vert </md-icon>
+                    </md-button>
+                    
+                    <md-menu-content>
+                        <md-menu-item hide-gt-xs>
+                            <md-button ng-click="null" layout="row">
+                                <md-icon md-font-set="material-icons">add_a_photo</md-icon>
+                                Add a photo
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item hide-gt-xs>
+                            <md-button ng-click="null" layout="row">
+                                <md-icon md-font-set="material-icons">favorite</md-icon>
+                                Loved it
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item hide-gt-sm>
+                            <md-button ng-click="null" layout="row">
+                                <md-icon md-font-set="material-icons">bookmark</md-icon>
+                                Tag it
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item hide-gt-sm>
+                            <md-button ng-click="null" layout="row">
+                                <md-icon md-font-set="material-icons">exit_to_app</md-icon>
+                                Exit App
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+
+        </md-toolbar>
+
+
+        <md-content layout="row">
+            <div layout-padding flex="80">
+            </div>
+        </md-content>
+    </div>
+
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+</html>

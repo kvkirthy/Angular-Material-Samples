@@ -1,0 +1,157 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        pre{
+            background-color: lightgrey;
+        }
+    </style>
+    <title>Angular Material Sample</title>
+</head>
+
+<!-- 
+        bootstrap to using the sampleApp module. Refer to app/main.js
+    -->
+
+<body ng-app="sampleApp" layout="column" layout-fill>
+
+    <md-toolbar md-scroll-shrink="true" layout-padding class="md-tall md-toolbar-tools-bottom">
+        <span flex></span>
+        <div class="md-toolbar-tools">
+
+            <h2>Tabs</h2>
+        </div>
+    </md-toolbar>
+
+    <md-content ng-controller="tabController" layout-padding flex>
+
+        <!-- 
+            Following switch to demonstrate dynamically disabling a tab. 
+            model value set on a flag isTab3Enabled. This is tied to Tab 3.
+        -->
+        <md-switch ng-model="isTab3Enabled">Disable Tab 3</md-switch>
+
+        
+                <!-- 
+                Use the directive md-tabs 
+               
+                md-stretch-tabs: auto
+                auto - stretched to take full width on a smaller screen like mobile phone and tablet in portrait mode. It does not stretch tabs on a mobile screen in landscape mode or a desktop screen (greater screen width).
+                
+                md-align-tabs="top" tab titles on top.
+                
+                md-center-tabs: With horizontal space available, it aligns tabs to center. If we use auto or never for md-stretch-tabs, preferably set md-center-tabs.
+
+                md-swipe-content: It allows user to swipe on content of the tab right or left to move to next or previous tabs. For a better mobile/table or any other touch screen experience, set md-swipe-content.
+            -->
+
+        <md-tabs md-stretch-tabs="auto" md-align-tabs="top" md-dynamic-height md-border-bottom md-center-tabs md-swipe-content>
+
+            <!-- Tab TItle is specified in the label attribute -->
+            <md-tab label="Tab-A">
+                <!-- Tab body - content of the tab -->
+                <md-tab-body layout-padding="true">
+                    <h4>Welcome, This is the first tab !</h4>
+                </md-tab-body>
+            </md-tab>
+            <!-- controller function tabSelected called on selection and tabDeselected called on navigating away -->
+            <md-tab md-on-select="tabSelected()" md-on-deselect="tabDeselected()">
+                <md-tab-label>
+                    <md-icon md-svg-src="/images/ic_rowing_black_24px.svg" aria-label="android "></md-icon>
+                    <span style="font-style:italic">Rower</span>
+                </md-tab-label>
+                <md-tab-body layout-padding="true">
+                    <h4>There you go, I stand second</h4>
+                    <div>
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum."
+                        <br/>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+            <md-tab label="Tab-C" ng-disabled="isTab3Enabled">
+                <md-tab-body layout-padding="true">
+                    <h4>At last, you got to me.</h4>
+                </md-tab-body>
+            </md-tab>
+        </md-tabs>
+        <pre>
+            <code>
+        &lt;!-- 
+            Following switch to demonstrate dynamically disabling a tab. 
+            model value set on a flag isTab3Enabled. This is tied to Tab 3.
+        --&gt;
+        &lt;md-switch ng-model=&quot;isTab3Enabled&quot;&gt;Disable Tab 3&lt;/md-switch&gt;
+
+        
+                &lt;!-- 
+                Use the directive md-tabs 
+               
+                md-stretch-tabs: auto
+                auto - stretched to take full width on a smaller screen like mobile phone and tablet in portrait mode. It does not stretch tabs on a mobile screen in landscape mode or a desktop screen (greater screen width).
+                
+                md-align-tabs=&quot;top&quot; tab titles on top.
+                
+                md-center-tabs: With horizontal space available, it aligns tabs to center. If we use auto or never for md-stretch-tabs, preferably set md-center-tabs.
+
+                md-swipe-content: It allows user to swipe on content of the tab right or left to move to next or previous tabs. For a better mobile/table or any other touch screen experience, set md-swipe-content.
+            --&gt;
+
+        &lt;md-tabs md-stretch-tabs=&quot;auto&quot; md-align-tabs=&quot;top&quot; md-dynamic-height md-border-bottom md-center-tabs md-swipe-content&gt;
+
+            &lt;!-- Tab TItle is specified in the label attribute --&gt;
+            &lt;md-tab label=&quot;Tab-A&quot;&gt;
+                &lt;!-- Tab body - content of the tab --&gt;
+                &lt;md-tab-body layout-padding=&quot;true&quot;&gt;
+                    &lt;h4&gt;Welcome, This is the first tab !&lt;/h4&gt;
+                &lt;/md-tab-body&gt;
+            &lt;/md-tab&gt;
+            &lt;!-- controller function tabSelected called on selection and tabDeselected called on navigating away --&gt;
+            &lt;md-tab md-on-select=&quot;tabSelected()&quot; md-on-deselect=&quot;tabDeselected()&quot;&gt;
+                &lt;md-tab-label&gt;
+                    &lt;md-icon md-svg-src=&quot;/images/ic_rowing_black_24px.svg&quot; aria-label=&quot;android &quot;&gt;&lt;/md-icon&gt;
+                    &lt;span style=&quot;font-style:italic&quot;&gt;Rower&lt;/span&gt;
+                &lt;/md-tab-label&gt;
+                &lt;md-tab-body layout-padding=&quot;true&quot;&gt;
+                    &lt;h4&gt;There you go, I stand second&lt;/h4&gt;
+                    &lt;div&gt;
+                        &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.&quot;
+                        &lt;br/&gt;
+                    &lt;/div&gt;
+                &lt;/md-tab-body&gt;
+            &lt;/md-tab&gt;
+            &lt;md-tab label=&quot;Tab-C&quot; ng-disabled=&quot;isTab3Enabled&quot;&gt;
+                &lt;md-tab-body layout-padding=&quot;true&quot;&gt;
+                    &lt;h4&gt;At last, you got to me.&lt;/h4&gt;
+                &lt;/md-tab-body&gt;
+            &lt;/md-tab&gt;
+        &lt;/md-tabs&gt;                
+            </code>
+        </pre>
+    </md-content>
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+</html>

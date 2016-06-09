@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title>Action Buttons Sample</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <style>
+        section {
+            background-color: lightblue
+        }
+        
+        pre {
+            background-color: lightgray
+        }
+    </style>
+
+</head>
+
+<body ng-app="sampleApp" ng-cloak>
+
+    <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>Resonsive Breakpoints - show and hide</h3>
+    </md-toolbar>
+
+    <md-content>
+        <div>&nbsp;</div>
+        <strong>Show image on a screen greater than small</strong>
+        <div layout="row" flex>
+            <div layout="row" layout-padding>
+                <!-- show only on screens greater than small -->
+                <div show-gt-sm hide>
+                    <img src="/images/AngularJS.png">
+                </div>
+                <div>
+                    <strong>AngularJS</strong>
+                    <div>Superheroic JavaScript framework</div>
+                    <div>Website: angularjs.org</div>
+                    <div>Twitter: @angularjs</div>
+                </div>
+            </div>
+        </div>
+        <pre>
+            <code>
+            &lt;div layout=&quot;row&quot; layout-padding&gt;
+                &lt;!-- show only on screens greater than small --&gt;
+                &lt;div show-gt-sm hide&gt;
+                    &lt;img src=&quot;/images/AngularJS.png&quot;&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;strong&gt;AngularJS&lt;/strong&gt;
+                    &lt;div&gt;Superheroic JavaScript framework&lt;/div&gt;
+                    &lt;div&gt;Website: angularjs.org&lt;/div&gt;
+                    &lt;div&gt;Twitter: @angularjs&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;                
+            </code>
+        </pre>
+    </md-content>
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+
+</html>

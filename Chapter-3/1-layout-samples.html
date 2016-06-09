@@ -1,0 +1,131 @@
+<html>
+
+<head>
+    <title>Action Buttons Sample</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <style>
+        section {
+            background-color: lightblue
+        }
+        
+        pre {
+            background-color: lightgray
+        }
+    </style>
+
+</head>
+
+<body ng-app="sampleApp" ng-cloak>
+
+    <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>Layout Samples</h3>
+    </md-toolbar>
+
+    <md-content layout-padding>
+        <div layout="column">
+            <strong> A column layout Sample</strong>
+            <div style="min-height:100px; background-color:yellow">
+                Block -1
+            </div>
+            <div style="min-height:100px; background-color:lightblue">
+                Block -2
+            </div>
+            <pre>
+             <code>
+    &lt;!-- Using Div elements to demonstrate layout. Could use with any HTML element textbox, dropdowns, labels etc. --&gt;
+                 
+       &lt;div layout=&quot;column&quot;&gt;
+         &lt;div style=&quot;min-height:100px; background-color:yellow&quot;&gt;
+             Block -1 
+         &lt;/div&gt;
+          &lt;div style=&quot;min-height:100px; background-color:lightblue&quot;&gt;
+             Block -2
+         &lt;/div&gt;
+       &lt;/div&gt;                
+             </code>
+         </pre>
+        </div>
+
+        <div layout="column">
+            <strong> A row layout Sample</strong>
+            <div layout="row" layout-padding>
+                <div style="min-height:100px; min-width:500px; background-color:yellow">
+                    Block -1
+                </div>
+                <div style="min-height:100px; min-width:500px; background-color:lightblue">
+                    Block -2
+                </div>
+            </div>
+
+            <pre>
+             <code>
+    &lt;!-- Using Div elements to demonstrate layout. Could use with any HTML element textbox, dropdowns, labels etc. --&gt;
+                 
+          &lt;div layout=&quot;row&quot;&gt;
+            &lt;div style=&quot;min-height:100px; background-color:yellow&quot;&gt;
+                Block -1 
+            &lt;/div&gt;
+            &lt;div style=&quot;min-height:100px; background-color:lightblue&quot;&gt;
+                Block -2
+            &lt;/div&gt;              
+          &lt;/div&gt;           
+             </code>
+         </pre>
+        </div>
+
+        <div layout="column">
+            <strong>Use a combination of row and column to get desired alignment </strong>
+            <div layout="column" layout-padding>
+                <div style="min-height:100px; max-width:500px; background-color:yellow">
+
+                </div>
+                <div layout="row">
+                    <!-- Use multiples of 5 to flex an element horizontally or vertically (depending on layout value) -->
+                    <div style="min-height:100px; min-width:250px; background-color:lightblue">
+
+                    </div>
+                    <div>&nbsp;</div>
+                    <div style="min-height:100px; min-width:250px; background-color:lightgreen">
+
+                    </div>
+                </div>
+            </div>
+            <div layout="column">
+                <pre>
+                <code>
+            &lt;div layout=&quot;column&quot; layout-padding&gt;
+                &lt;div style=&quot;min-height:100px; max-width:500px; background-color:yellow&quot;&gt;
+                    
+                &lt;/div&gt;
+                &lt;div layout=&quot;row&quot;&gt;
+                    &lt;!-- Use multiples of 5 to flex an element horizontally or vertically (depending on layout value) --&gt;
+                    &lt;div style=&quot;min-height:100px; min-width:250px; background-color:lightblue&quot;&gt;
+                       
+                    &lt;/div&gt;
+                    &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+                    &lt;div style=&quot;min-height:100px; min-width:250px; background-color:lightgreen&quot;&gt;
+                        
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;                   
+                </code>
+            </pre>
+            </div>
+
+    </md-content>
+
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+    
+</body>
+
+
+</html>

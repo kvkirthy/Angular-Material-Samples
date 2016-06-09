@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <title>Action Buttons Sample</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <style>
+        section {
+            background-color: lightblue
+        }
+        
+        pre {
+            background-color: lightgray
+        }
+    </style>
+
+</head>
+
+<body ng-app="sampleApp" ng-cloak>
+
+    <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>Flex</h3>
+    </md-toolbar>
+
+    <md-content layout-padding layout="column">
+
+        <strong>Shows the items as a row on a wider screen and as a column on a smaller mobile screen.</strong>
+        <div layout="column" layout-gt-sm="row" layout-padding>
+            <div>
+                <strong>AngularJS</strong>
+                <div>Superheroic JavaScript framework</div>
+                <div>Website: angularjs.org</div>
+                <div>Twitter: @angularjs</div>
+            </div>
+            <div>
+                <strong>Angular Material</strong>
+                <div>AngularJS and Material Design</div>
+                <div>material.angularjs.org</div>
+                <div>Twitter: @angularjs</div>
+            </div>
+        </div>
+        
+        <pre>
+            <code>
+           &lt;div layout=&quot;column&quot; layout-gt-sm=&quot;row&quot; layout-padding&gt;
+                &lt;div&gt;
+                        &lt;strong&gt;AngularJS&lt;/strong&gt; 
+                        &lt;div&gt;Superheroic JavaScript framework&lt;/div&gt;
+                        &lt;div&gt;Website: angularjs.org&lt;/div&gt;
+                        &lt;div&gt;Twitter: @angularjs&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                        &lt;strong&gt;Angular Material&lt;/strong&gt; 
+                        &lt;div&gt;AngularJS and Material Design&lt;/div&gt;
+                        &lt;div&gt;material.angularjs.org&lt;/div&gt;
+                        &lt;div&gt;Twitter: @angularjs&lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;                
+            </code>
+        </pre>
+
+
+    </md-content>
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+
+</html>

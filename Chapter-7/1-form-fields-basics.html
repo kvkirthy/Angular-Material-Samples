@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    
+    <style>
+        pre{
+            background-color: lightgray;
+        }
+    </style>
+
+    <title>Form Fieds - Input (Text) Field</title>
+</head>
+
+<body ng-app="sampleApp" ng-cloak ng-cloak>
+    <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>Form fields validations - samples</h3>
+    </md-toolbar>
+
+    <md-content layout-padding>
+        <form name="userApplication" layout="column">
+            <div>
+                <!-- Encapsulate text field in a md-input-container element/directive for Material Design style text field -->
+                <md-input-container>
+                    <!-- use required attribute for required field validation (HTML5)
+                         The validation alert will be shown in Angular Material way.
+                         
+                         Notice max length validation set with md-maxlength attribute/directive.
+                     -->
+                    <input type="text" placeholder="Enter full name" flex name="fullName" ng-model="fullName" required md-maxlength="20">
+
+                    <!-- $error object will populated with messages when form validations fail -->
+                    <div ng-messages="userApplication.fullName.$error">
+                        <!-- message for required field validation -->
+                        <div ng-message="required">Fullname is mandatory</div>
+                        <!-- message for max length validation -->
+                        <div ng-message="md-maxlength">This field can not accept more than twenty characters</div>
+                    </div>
+                </md-input-container>
+                <pre>
+                    <code>
+        // Angular Material uses ngMessages for showing form validation failures. Make sure to add this module as a dependency
+        angular.module('sampleApp', ['ngMaterial', 'ngMessages'])
+
+        <strong>Template Code below,  </strong>                   
+        &lt;!-- Encapsulate text field in a md-input-container element/directive for Material Design style text field --&gt;
+        &lt;md-input-container flex&gt;
+            &lt;!-- use required attribute for required field validation (HTML5)
+                The validation alert will be shown in Angular Material way.
+                
+                Notice max length validation set with md-maxlength attribute/directive.
+            --&gt;
+            &lt;input type=&quot;text&quot; placeholder=&quot;Enter full name&quot; flex name=&quot;fullName&quot; ng-model=&quot;fullName&quot; required md-maxlength=&quot;20&quot;&gt;
+            
+            &lt;!-- $error object will populated with messages when form validations fail --&gt;
+            &lt;div ng-messages=&quot;userApplication.fullName.$error&quot;&gt;
+                &lt;!-- message for required field validation --&gt;
+                &lt;div ng-message=&quot;required&quot;&gt;Fullname is mandatory&lt;/div&gt;
+                &lt;!-- message for max length validation --&gt;
+                &lt;div ng-message=&quot;md-maxlength&quot;&gt;This field can not accept more than twenty characters&lt;/div&gt;
+            &lt;/div&gt;         
+        &lt;/md-input-container&gt;                                   
+                    </code>
+                </pre>
+            </div>
+
+            <div>
+                <md-input-container >
+                    <!-- use ng-pattern for regex validation.
+                        Following has two types of validations for email
+                        email validation checks basic email validation
+                        pattern validation checks if the email from the expected company domain. 
+                        multiple attribute allows all failing validation error messages shown at the same time.
+                    -->
+                    <input type="email" placeholder="Primary e-mail" flex name="email" ng-model="email" required ng-pattern="/^[a-z0-9]*@mycompany.com$/">
+                    <div ng-messages="userApplication.email.$error" multiple>
+                        <div ng-message="required">Email address is mandatory</div>
+                        <div ng-message="email">Invalid email address</div>
+                        <div ng-message="pattern">Not a useful email. All on this form should end with mycompany.com</div>
+                    </div>
+                </md-input-container>
+                <pre>
+                    <code>
+        &lt;md-input-container flex&gt;
+            &lt;!-- use ng-pattern for regex validation.
+                    Following has two types of validations for email
+                    email validation checks basic email validation
+                    pattern validation checks if the email from the expected company domain. 
+                    multiple attribute allows all failing validation error messages shown at the same time.
+                --&gt;
+            &lt;input type=&quot;email&quot; placeholder=&quot;Primary e-mail&quot; flex name=&quot;email&quot; ng-model=&quot;email&quot; required ng-pattern=&quot;/^[a-z0-9]*@mycompany.com$/&quot;&gt;
+            &lt;div ng-messages=&quot;userApplication.email.$error&quot; multiple&gt;
+                &lt;div ng-message=&quot;required&quot;&gt;Email address is mandatory&lt;/div&gt;
+                &lt;div ng-message=&quot;email&quot;&gt;Invalid email address&lt;/div&gt;
+                &lt;div ng-message=&quot;pattern&quot;&gt;Not a useful email. All on this form should end with mycompany.com&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/md-input-container&gt;                        
+                    </code>
+                </pre>
+            </div>
+
+            <div>
+                <!--  use hint CSS class for showing a help hint text under the text field -->
+                <md-input-container >
+                    <input type="text" placeholder="Phone number" flex name="phone" ng-model="phone" required ng-pattern="/^\+[0-9]{1,2} \([0-9]{3}\) [0-9]{3} [0-9]{4}$/">
+                    <div class="hint">+xx (yyy) zzz-zzzz; x= Country code; y= Regional code; z= Phone number </div>
+                    <div ng-messages="userApplication.phone.$error">
+                        <div ng-message="required">Phone number is mandatory</div>
+                        <div ng-message="pattern">Invalid phone number</div>
+                    </div>
+                </md-input-container>
+                <pre>
+                <code>
+        &lt;!--  use hint CSS class for showing a help hint text under the text field --&gt;
+        &lt;md-input-container flex=&quot;40&quot;&gt;
+            &lt;input type=&quot;text&quot; placeholder=&quot;Phone number&quot; flex name=&quot;phone&quot; ng-model=&quot;phone&quot; required ng-pattern=&quot;/^\+[0-9]{1,2} \([0-9]{3}\) [0-9]{3} [0-9]{4}$/&quot;&gt;
+            &lt;div class=&quot;hint&quot;&gt;+xx (yyy) zzz-zzzz; x= Country code; y= Regional code; z= Phone number &lt;/div&gt;
+            &lt;div ng-messages=&quot;userApplication.phone.$error&quot;&gt;
+                &lt;div ng-message=&quot;required&quot;&gt;Phone number is mandatory&lt;/div&gt;
+                &lt;div ng-message=&quot;pattern&quot;&gt;Invalid phone number&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/md-input-container&gt;                    
+                </code>
+            </pre>
+            </div>
+        </form>
+    </md-content>
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+
+</body>
+
+</html>

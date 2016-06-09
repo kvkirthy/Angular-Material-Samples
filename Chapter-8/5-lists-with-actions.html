@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <style>
+        pre {
+            background-color: lightgray;
+        }
+    </style>
+
+    <title>Lists Sample</title>
+</head>
+
+<body ng-app="sampleApp" ng-cloak layout="column">
+
+    <md-toolbar layout-padding>
+        <div class="md-toolbar-tools">
+            <h2>Lists Sample</h2>
+        </div>
+    </md-toolbar>
+    <md-content layout-padding layout="column" ng-controller="listSampleController">
+        
+        <md-list>
+            <!-- 
+                A list item is created for each super hero. 
+                Image is applied with md-avatar class for styling that fits list. (md-avatar could be used without lists as well)
+                
+                The CSS class helps primary and secondary button separation
+            -->
+            <md-list-item class="secondary-button-padding" ng-repeat="item in superheroes" ng-click="buttonClickHandler()">
+                <img ng-src="{{item.imageUrl}}" class="md-avatar">
+                <div class="md-list-item-text" layout="column">
+                    <strong>{{item.name}}</strong>
+                    <span>{{item.category}}</span>
+                </div>
+                <!-- Identify the button as secondary using CSS class md-secondary -->
+                <md-button class="md-secondary" ng-click="secondaryButtonClickHandler()">
+                    Actions
+                </md-button>
+            </md-list-item>
+        </md-list>
+        
+        <pre>
+            <code>
+        &lt;md-list&gt;
+            &lt;!-- 
+                A list item is created for each super hero. 
+                Image is applied with md-avatar class for styling that fits list. (md-avatar could be used without lists as well)
+                
+                The CSS class helps primary and secondary button separation
+            --&gt;
+            &lt;md-list-item class=&quot;secondary-button-padding&quot; ng-repeat=&quot;item in superheroes&quot; ng-click=&quot;buttonClickHandler()&quot;&gt;
+                &lt;img ng-src=&quot;{{item.imageUrl}}&quot; class=&quot;md-avatar&quot;&gt;
+                &lt;div class=&quot;md-list-item-text&quot; layout=&quot;column&quot;&gt;
+                    &lt;strong&gt;{{item.name}}&lt;/strong&gt;
+                    &lt;span&gt;{{item.category}}&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;!-- Identify the button as secondary using CSS class md-secondary --&gt;
+                &lt;md-button class=&quot;md-secondary&quot; ng-click=&quot;secondaryButtonClickHandler()&quot;&gt;
+                    Actions
+                &lt;/md-button&gt;
+            &lt;/md-list-item&gt;
+        &lt;/md-list&gt;                
+            </code>
+        </pre>
+    </md-content>
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+</html>

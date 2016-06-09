@@ -1,0 +1,464 @@
+<html>
+
+<head>
+    <title>Action Buttons Sample</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        section {
+            background-color: lightblue
+        }
+        
+        pre {
+            background-color: lightgray
+        }
+       
+    </style>
+
+</head>
+
+<body ng-app="sampleApp" ng-cloak>
+
+    <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>Action Buttons Sample</h3>
+    </md-toolbar>
+
+    <div layout="column">
+
+        <section layout-padding>
+            <strong layout-padding>Basic Buttons</strong>
+
+            <div layout="row">
+                <!-- Use md-button for a link. Use ng-href for the hyperlink -->
+                <md-button ng-href="https://material.angularjs.org/" target="__blank">Link</md-button>
+
+                <!-- A normal button. You will see the ink or ripple feedback on click of the button -->
+                <md-button ng-click="null">Basic</md-button>
+
+                <!-- Use md-raised class for raised effect -->
+                <md-button class="md-raised">Raised Button</md-button>
+
+                <!-- Icon button: Use CSS class md-icon-button. 
+                    An Icon button needs ARIA label for accessibility reasons. 
+                    Generally ngAria uses label for accessibility text. This is while using screen readers.
+                    However, for an icon button, there is no label. Hence if we drop aria-label, it will result in a warning.
+                -->
+                <md-button ng-click="null" class="md-icon-button" aria-label="Sport">
+                    <md-icon md-svg-src="images/ic_rowing_black_24px.svg"></md-icon>
+                </md-button>
+            </div>
+            <pre>
+                <code>
+                    &lt;!-- Use md-button for a link. Use ng-href for the hyperlink --&gt;
+                    &lt;md-button ng-href=&quot;https://material.angularjs.org/&quot; target=&quot;__blank&quot;&gt;Link&lt;/md-button&gt;
+
+                    &lt;!-- A normal button. You will see the ink or ripple feedback on click of the button --&gt;
+                    &lt;md-button ng-click=&quot;null&quot;&gt;Basic&lt;/md-button&gt;
+
+                    &lt;!-- Use md-raised class for raised effect --&gt;
+                    &lt;md-button class=&quot;md-raised&quot;&gt;Raised Button&lt;/md-button&gt;
+
+                    &lt;!-- Icon button: Use CSS class md-icon-button. 
+                        An Icon button needs ARIA label for accessibility reasons. 
+                        Generally ngAria uses label for accessibility text. This is while using screen readers.
+                        However, for an icon button, there is no label. Hence if we drop aria-label, it will result in a warning.
+                    --&gt;
+                    &lt;md-button ng-click=&quot;null&quot; class=&quot;md-icon-button&quot; aria-label=&quot;Sport&quot;&gt;
+                        &lt;md-icon md-svg-src=&quot;images/ic_rowing_black_24px.svg&quot;&gt;&lt;/md-icon&gt;
+                    &lt;/md-button&gt;
+                </code>
+            </pre>
+        </section>
+        <div>&nbsp;</div>
+
+        <section layout-padding>
+            <strong>Primary Buttons</strong>
+
+            <div layout="row">
+                <!-- Use md-button for a link. Use ng-href for the hyperlink -->
+                <md-button class="md-primary" ng-href="https://material.angularjs.org/" target="__blank">Link</md-button>
+
+                <!-- A normal button. You will see the ink or ripple feedback on click of the button -->
+                <md-button class="md-primary" ng-click="null">Basic</md-button>
+
+                <!-- Use md-raised class for raised effect -->
+                <md-button class="md-raised md-primary">Raised Button</md-button>
+
+                <!-- Icon button: Use CSS class md-icon-button. 
+                    An Icon button needs ARIA label for accessibility reasons. 
+                    Generally ngAria uses label for accessibility text. This is while using screen readers.
+                    However, for an icon button, there is no label. Hence if we drop aria-label, it will result in a warning.
+                -->
+                <md-button ng-click="null" class="md-icon-button md-primary" aria-label="Sport">
+                    <md-icon md-svg-src="images/ic_rowing_black_24px.svg"></md-icon>
+                </md-button>
+
+                <!-- Use class md-fab for Floating Action Button 
+                     By default Accent theme is applied on it. If need to be a primary button apply the class md-primary 
+                -->
+                <md-button ng-click="null" class="md-icon-button md-fab md-primary" aria-label="An Idea">
+                    <md-icon md-svg-src="images/ic_lightbulb_outline_black_48px.svg"></md-icon>
+                </md-button>
+
+                <!-- md-mini for smaller FAB control -->
+                <md-button ng-click="null" class="md-icon-button md-fab md-mini md-primary" aria-label="An Idea">
+                    <md-icon md-svg-src="images/ic_lightbulb_outline_black_48px.svg"></md-icon>
+                </md-button>
+
+            </div>
+            <pre>
+                <code>
+                     &lt;!--
+                       <h3>Use md-primary CSS class for primary buttons</h3> 
+                    --&gt;  
+                                       
+                    &lt;!-- Use md-button for a link. Use ng-href for the hyperlink --&gt;
+                    &lt;md-button class=&quot;md-primary&quot; ng-href=&quot;https://material.angularjs.org/&quot; target=&quot;__blank&quot;&gt;Link&lt;/md-button&gt;
+
+                    &lt;!-- A normal button. You will see the ink or ripple feedback on click of the button --&gt;
+                    &lt;md-button class=&quot;md-primary&quot; ng-click=&quot;null&quot;&gt;Basic&lt;/md-button&gt;
+
+                    &lt;!-- Use md-raised class for raised effect --&gt;
+                    &lt;md-button class=&quot;md-raised md-primary&quot;&gt;Raised Button&lt;/md-button&gt;
+
+                    &lt;!-- Icon button: Use CSS class md-icon-button. 
+                        An Icon button needs ARIA label for accessibility reasons. 
+                        Generally ngAria uses label for accessibility text. This is while using screen readers.
+                        However, for an icon button, there is no label. Hence if we drop aria-label, it will result in a warning.
+                    --&gt;
+                    &lt;md-button ng-click=&quot;null&quot; class=&quot;md-icon-button md-primary&quot; aria-label=&quot;Sport&quot;&gt;
+                        &lt;md-icon md-svg-src=&quot;images/ic_rowing_black_24px.svg&quot;&gt;&lt;/md-icon&gt;
+                    &lt;/md-button&gt;
+
+                    &lt;!-- Use class md-fab for Floating Action Button 
+                        By default Accent theme is applied on it. If need to be a primary button apply the class md-primary 
+                    --&gt;
+                    &lt;md-button ng-click=&quot;null&quot; class=&quot;md-icon-button md-fab md-primary&quot; aria-label=&quot;An Idea&quot;&gt;
+                        &lt;md-icon md-svg-src=&quot;images/ic_lightbulb_outline_black_48px.svg&quot;&gt;&lt;/md-icon&gt;
+                    &lt;/md-button&gt;
+
+                    &lt;!-- md-mini for smaller FAB control --&gt;
+                    &lt;md-button ng-click=&quot;null&quot; class=&quot;md-icon-button md-fab md-mini md-primary&quot; aria-label=&quot;An Idea&quot;&gt;
+                        &lt;md-icon md-svg-src=&quot;images/ic_lightbulb_outline_black_48px.svg&quot;&gt;&lt;/md-icon&gt;
+                    &lt;/md-button&gt;                    
+                </code>
+            </pre>
+        </section>
+
+        <div>&nbsp;</div>
+        <!--
+            Use md-accent CSS class for accent buttons
+        -->
+        <section layout-padding>
+            <strong>Accent Buttons</strong>
+
+            <div layout="row">
+                <!-- Use md-button for a link. Use ng-href for the hyperlink -->
+                <md-button class="md-accent" ng-href="https://material.angularjs.org/" target="__blank">Link</md-button>
+
+                <!-- A normal button. You will see the ink or ripple feedback on click of the button -->
+                <md-button class="md-accent" ng-click="null">Basic</md-button>
+
+                <!-- Use md-raised class for raised effect -->
+                <md-button class="md-raised md-accent">Raised Button</md-button>
+
+                <!-- Icon button: Use CSS class md-icon-button. 
+                    An Icon button needs ARIA label for accessibility reasons. 
+                    Generally ngAria uses label for accessibility text. This is while using screen readers.
+                    However, for an icon button, there is no label. Hence if we drop aria-label, it will result in a warning.
+                -->
+                <md-button ng-click="null" class="md-icon-button md-accent" aria-label="Sport">
+                    <md-icon md-svg-src="images/ic_rowing_black_24px.svg"></md-icon>
+                </md-button>
+
+                <!-- Use class md-fab for Floating Action Button 
+                     By default Accent theme is applied on it.
+                -->
+                <md-button ng-click="null" class="md-icon-button md-fab" aria-label="An Idea">
+                    <md-icon md-svg-src="images/ic_lightbulb_outline_black_48px.svg"></md-icon>
+                </md-button>
+
+                <!-- md-mini for smaller FAB control -->
+                <md-button ng-click="null" class="md-icon-button md-fab md-mini" aria-label="An Idea">
+                    <md-icon md-svg-src="images/ic_lightbulb_outline_black_48px.svg"></md-icon>
+                </md-button>
+            </div>
+            <pre>
+                <code>
+                    &lt;!--
+                       <h3>Use md-accent CSS class for accent buttons</h3> 
+                    --&gt;  
+                    &lt;!-- Use md-button for a link. Use ng-href for the hyperlink --&gt;
+                    &lt;md-button class=&quot;md-accent&quot; ng-href=&quot;https://material.angularjs.org/&quot; target=&quot;__blank&quot;&gt;Link&lt;/md-button&gt;
+
+                    &lt;!-- A normal button. You will see the ink or ripple feedback on click of the button --&gt;
+                    &lt;md-button class=&quot;md-accent&quot; ng-click=&quot;null&quot;&gt;Basic&lt;/md-button&gt;
+
+                    &lt;!-- Use md-raised class for raised effect --&gt;
+                    &lt;md-button class=&quot;md-raised md-accent&quot;&gt;Raised Button&lt;/md-button&gt;
+
+                    &lt;!-- Icon button: Use CSS class md-icon-button. 
+                        An Icon button needs ARIA label for accessibility reasons. 
+                        Generally ngAria uses label for accessibility text. This is while using screen readers.
+                        However, for an icon button, there is no label. Hence if we drop aria-label, it will result in a warning.
+                    --&gt;
+                    &lt;md-button ng-click=&quot;null&quot; class=&quot;md-icon-button md-accent&quot; aria-label=&quot;Sport&quot;&gt;
+                        &lt;md-icon md-svg-src=&quot;images/ic_rowing_black_24px.svg&quot;&gt;&lt;/md-icon&gt;
+                    &lt;/md-button&gt;
+
+                    &lt;!-- Use class md-fab for Floating Action Button 
+                        By default Accent theme is applied on it.
+                    --&gt;
+                    &lt;md-button ng-click=&quot;null&quot; class=&quot;md-icon-button md-fab&quot; aria-label=&quot;An Idea&quot;&gt;
+                        &lt;md-icon md-svg-src=&quot;images/ic_lightbulb_outline_black_48px.svg&quot;&gt;&lt;/md-icon&gt;
+                    &lt;/md-button&gt;
+
+                    &lt;!-- md-mini for smaller FAB control --&gt;
+                    &lt;md-button ng-click=&quot;null&quot; class=&quot;md-icon-button md-fab md-mini&quot; aria-label=&quot;An Idea&quot;&gt;
+                        &lt;md-icon md-svg-src=&quot;images/ic_lightbulb_outline_black_48px.svg&quot;&gt;&lt;/md-icon&gt;
+                    &lt;/md-button&gt;                    
+                </code>
+            </pre>
+        </section>
+
+        <div>&nbsp;</div>
+        <!--
+            Use md-warn CSS class for warning buttons
+        -->
+        <section layout-padding>
+            <strong>Warn Buttons</strong>
+
+            <div layout="row">
+                <!-- Use md-button for a link. Use ng-href for the hyperlink -->
+                <md-button class="md-warn" ng-href="https://material.angularjs.org/" target="__blank">Link</md-button>
+
+                <!-- A normal button. You will see the ink or ripple feedback on click of the button -->
+                <md-button class="md-warn" ng-click="null">Basic</md-button>
+
+                <!-- Use md-raised class for raised effect -->
+                <md-button class="md-raised md-warn">Raised Button</md-button>
+
+                <!-- Icon button: Use CSS class md-icon-button. 
+                    An Icon button needs ARIA label for accessibility reasons. 
+                    Generally ngAria uses label for accessibility text. This is while using screen readers.
+                    However, for an icon button, there is no label. Hence if we drop aria-label, it will result in a warning.
+                -->
+                <md-button ng-click="null" class="md-icon-button md-warn" aria-label="Sport">
+                    <md-icon md-svg-src="images/ic_rowing_black_24px.svg"></md-icon>
+                </md-button>
+
+                <!-- Use class md-fab for Floating Action Button 
+                     By default Accent theme is applied on it. If need to be a Warn button apply the class md-warn 
+                -->
+                <md-button ng-click="null" class="md-icon-button md-fab md-warn" aria-label="An Idea">
+                    <md-icon md-svg-src="images/ic_lightbulb_outline_black_48px.svg"></md-icon>
+                </md-button>
+
+                <!-- md-mini for smaller FAB control -->
+                <md-button ng-click="null" class="md-icon-button md-fab md-mini md-warn" aria-label="An Idea">
+                    <md-icon md-svg-src="images/ic_lightbulb_outline_black_48px.svg"></md-icon>
+                </md-button>
+            </div>
+            <pre>
+                <code>
+                &lt;!--
+                    <h3>Use md-warn CSS class for warn themed buttons</h3> 
+                --&gt;  
+                                        
+                &lt;!-- Use md-button for a link. Use ng-href for the hyperlink --&gt;
+                &lt;md-button class=&quot;md-warn&quot; ng-href=&quot;https://material.angularjs.org/&quot; target=&quot;__blank&quot;&gt;Link&lt;/md-button&gt;
+
+                &lt;!-- A normal button. You will see the ink or ripple feedback on click of the button --&gt;
+                &lt;md-button class=&quot;md-warn&quot; ng-click=&quot;null&quot;&gt;Basic&lt;/md-button&gt;
+
+                &lt;!-- Use md-raised class for raised effect --&gt;
+                &lt;md-button class=&quot;md-raised md-warn&quot;&gt;Raised Button&lt;/md-button&gt;
+
+                &lt;!-- Icon button: Use CSS class md-icon-button. 
+                    An Icon button needs ARIA label for accessibility reasons. 
+                    Generally ngAria uses label for accessibility text. This is while using screen readers.
+                    However, for an icon button, there is no label. Hence if we drop aria-label, it will result in a warning.
+                --&gt;
+                &lt;md-button ng-click=&quot;null&quot; class=&quot;md-icon-button md-warn&quot; aria-label=&quot;Sport&quot;&gt;
+                    &lt;md-icon md-svg-src=&quot;images/ic_rowing_black_24px.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+
+                &lt;!-- Use class md-fab for Floating Action Button 
+                     By default Accent theme is applied on it. If need to be a Warn button apply the class md-warn 
+                --&gt;
+                &lt;md-button ng-click=&quot;null&quot; class=&quot;md-icon-button md-fab md-warn&quot; aria-label=&quot;An Idea&quot;&gt;
+                    &lt;md-icon md-svg-src=&quot;images/ic_lightbulb_outline_black_48px.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+
+                &lt;!-- md-mini for smaller FAB control --&gt;
+                &lt;md-button ng-click=&quot;null&quot; class=&quot;md-icon-button md-fab md-mini md-warn&quot; aria-label=&quot;An Idea&quot;&gt;
+                    &lt;md-icon md-svg-src=&quot;images/ic_lightbulb_outline_black_48px.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;                    
+                </code>
+            </pre>
+        </section>
+
+        <div>&nbsp;</div>
+        <!--
+            Use md-no-ink attribute to disable ripple effect or feedback on click of the button
+        -->
+        <section layout-padding>
+            <strong>No Ink</strong>
+            <div layout="row">
+                <!-- Use md-button for a link. Use ng-href for the hyperlink -->
+                <md-button md-no-ink ng-href="https://material.angularjs.org/" target="__blank">Link</md-button>
+
+                <!-- A normal button. You will see the ink or ripple feedback on click of the button -->
+                <md-button md-no-ink ng-click="null">Basic</md-button>
+
+                <!-- Use md-raised class for raised effect -->
+                <md-button class="md-raised" md-no-ink>Raised Button</md-button>
+
+                <!-- Icon button: Use CSS class md-icon-button. -->
+                <md-button ng-click="null" class="md-icon-button" md-no-ink aria-label="Sport">
+                    <md-icon md-svg-src="images/ic_lightbulb_outline_black_48px.svg"></md-icon>
+                </md-button>
+
+                <!-- Use class md-fab for Floating Action Button 
+               
+                -->
+                <md-button ng-click="null" class="md-icon-button md-fab md-primary" md-no-ink aria-label="An Idea">
+                    <md-icon md-svg-src="images/ic_lightbulb_outline_black_48px.svg"></md-icon>
+                </md-button>
+
+                <!-- md-mini for smaller FAB control -->
+                <md-button ng-click="null" class="md-icon-button md-fab md-primary md-mini" md-no-ink aria-label="An Idea">
+                    <md-icon md-svg-src="images/ic_lightbulb_outline_black_48px.svg"></md-icon>
+                </md-button>
+
+            </div>
+            <pre>
+                <code>
+                &lt;!--
+                    <h3>Use md-no-ink attribute to disable ripple effect or feedback on click of the button</h3> 
+                --&gt;                      
+                &lt;!-- Use md-button for a link. Use ng-href for the hyperlink --&gt;
+                &lt;md-button md-no-ink ng-href=&quot;https://material.angularjs.org/&quot; target=&quot;__blank&quot;&gt;Link&lt;/md-button&gt;
+
+                &lt;!-- A normal button. You will see the ink or ripple feedback on click of the button --&gt;
+                &lt;md-button md-no-ink ng-click=&quot;null&quot;&gt;Basic&lt;/md-button&gt;
+
+                &lt;!-- Use md-raised class for raised effect --&gt;
+                &lt;md-button class=&quot;md-raised&quot; md-no-ink&gt;Raised Button&lt;/md-button&gt;
+
+                &lt;!-- Icon button: Use CSS class md-icon-button. --&gt;
+                &lt;md-button ng-click=&quot;null&quot; class=&quot;md-icon-button&quot; md-no-ink aria-label=&quot;Sport&quot;&gt;
+                    &lt;md-icon md-svg-src=&quot;images/ic_lightbulb_outline_black_48px.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+
+                &lt;!-- Use class md-fab for Floating Action Button 
+               
+                --&gt;
+                &lt;md-button ng-click=&quot;null&quot; class=&quot;md-icon-button md-fab md-primary&quot; md-no-ink aria-label=&quot;An Idea&quot;&gt;
+                    &lt;md-icon md-svg-src=&quot;images/ic_lightbulb_outline_black_48px.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+
+                &lt;!-- md-mini for smaller FAB control --&gt;
+                &lt;md-button ng-click=&quot;null&quot; class=&quot;md-icon-button md-fab md-primary md-mini&quot; md-no-ink aria-label=&quot;An Idea&quot;&gt;
+                    &lt;md-icon md-svg-src=&quot;images/ic_lightbulb_outline_black_48px.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+                    
+                </code>
+            </pre>
+        </section>
+
+        <div>&nbsp;</div>
+
+        <section layout-padding>
+            <strong>Disabled Buttons</strong>
+
+            <div layout="row">
+                <!-- Use ng-disabled=true/false to enable/disable a button 
+                  Following sample has isButtonDisabled flag modified by a switch
+                -->
+                <span ng-init="isButtonDisabled=true"></span>
+                <md-switch ng-model="isButtonDisabled">Toggle to enable or disable buttons?</md-switch>
+
+                <!-- Use md-button for a link. Use ng-href for the hyperlink -->
+                <md-button ng-disabled="isButtonDisabled" ng-href="https://material.angularjs.org/" target="__blank">Link</md-button>
+
+                <!-- A normal button. You will see the ink or ripple feedback on click of the button -->
+                <md-button ng-disabled="isButtonDisabled" ng-click="null">Basic</md-button>
+
+                <!-- Use md-raised class for raised effect -->
+                <md-button ng-disabled="isButtonDisabled" class="md-raised" md-no-ink>Raised Button</md-button>
+
+                <!-- Icon button: Use CSS class md-icon-button. -->
+                <md-button ng-disabled="isButtonDisabled" ng-click="null" class="md-icon-button" aria-label="Sport">
+                    <md-icon md-svg-src="images/ic_lightbulb_outline_black_48px.svg"></md-icon>
+                </md-button>
+
+                <!-- Use class md-fab for Floating Action Button 
+               
+                -->
+                <md-button ng-disabled="isButtonDisabled" ng-click="null" class="md-icon-button md-fab md-primary" aria-label="An Idea">
+                    <md-icon md-svg-src="images/ic_lightbulb_outline_black_48px.svg"></md-icon>
+                </md-button>
+
+                <!-- md-mini for smaller FAB control -->
+                <md-button ng-disabled="isButtonDisabled" ng-click="null" class="md-icon-button md-fab md-primary md-mini" aria-label="An Idea">
+                    <md-icon md-svg-src="images/ic_lightbulb_outline_black_48px.svg"></md-icon>
+                </md-button>
+
+            </div>
+            <pre>
+                <code>
+                &lt;!--
+                    <h3>use ng-disabled property for disabling and enabling a button. We can apply logic to do so on the fly.</h3> 
+                --&gt; 
+                                    
+               &lt;!-- Use ng-disabled=true/false to enable/disable a button 
+                  Following sample has isButtonDisabled flag modified by a switch
+                --&gt;
+                &lt;span ng-init=&quot;isButtonDisabled=true&quot;&gt;&lt;/span&gt;
+                &lt;md-switch ng-model=&quot;isButtonDisabled&quot;&gt;Toggle to enable or disable buttons?&lt;/md-switch&gt;
+
+                &lt;!-- Use md-button for a link. Use ng-href for the hyperlink --&gt;
+                &lt;md-button ng-disabled=&quot;isButtonDisabled&quot; ng-href=&quot;https://material.angularjs.org/&quot; target=&quot;__blank&quot;&gt;Link&lt;/md-button&gt;
+
+                &lt;!-- A normal button. You will see the ink or ripple feedback on click of the button --&gt;
+                &lt;md-button ng-disabled=&quot;isButtonDisabled&quot; ng-click=&quot;null&quot;&gt;Basic&lt;/md-button&gt;
+
+                &lt;!-- Use md-raised class for raised effect --&gt;
+                &lt;md-button ng-disabled=&quot;isButtonDisabled&quot; class=&quot;md-raised&quot; md-no-ink&gt;Raised Button&lt;/md-button&gt;
+
+                &lt;!-- Icon button: Use CSS class md-icon-button. --&gt;
+                &lt;md-button ng-disabled=&quot;isButtonDisabled&quot; ng-click=&quot;null&quot; class=&quot;md-icon-button&quot; aria-label=&quot;Sport&quot;&gt;
+                    &lt;md-icon md-svg-src=&quot;images/ic_lightbulb_outline_black_48px.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+
+                &lt;!-- Use class md-fab for Floating Action Button 
+               
+                --&gt;
+                &lt;md-button ng-disabled=&quot;isButtonDisabled&quot; ng-click=&quot;null&quot; class=&quot;md-icon-button md-fab md-primary&quot; aria-label=&quot;An Idea&quot;&gt;
+                    &lt;md-icon md-svg-src=&quot;images/ic_lightbulb_outline_black_48px.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+
+                &lt;!-- md-mini for smaller FAB control --&gt;
+                &lt;md-button ng-disabled=&quot;isButtonDisabled&quot; ng-click=&quot;null&quot; class=&quot;md-icon-button md-fab md-primary md-mini&quot; aria-label=&quot;An Idea&quot;&gt;
+                    &lt;md-icon md-svg-src=&quot;images/ic_lightbulb_outline_black_48px.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;                    
+                </code>
+            </pre>
+        </section>
+    </div>
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+
+</html>

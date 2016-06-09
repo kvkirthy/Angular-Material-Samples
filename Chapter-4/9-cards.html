@@ -1,0 +1,146 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    
+    <style>
+        pre{
+            background-color: lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Angular Material Sample</title>
+</head>
+<!-- 
+    bootstrap to using the sampleApp module. Refer to app/main.js
+-->
+
+<body ng-app="sampleApp" layout="column" layout-fill>
+    <div>
+        <span ng-init="isMedTall=false"></span>
+
+        <!-- 
+           -- For a medium tall toolbar use CSS class md-medium-tall
+           -- ng-class allows dynamically apply the class based on selection on the page.
+           
+           -- Following is basic usage of Toolbar 
+           -- Identify labels and buttons on the toolbar with the CSS class md-toolbar-tools
+           -- The layout-padding attribute helps add padding around the elements.
+       -->
+        <md-toolbar layout-padding class="md-toolbar-tools" ng-class="{'md-medium-tall':isMedTall}">
+            <h3>Cards</h3>
+        </md-toolbar>
+
+        <!--
+            -- Wrap scoll enabled content in md-content directive
+            -- Using layout="column" aligns all control vertically within the directive.
+            -- The layout-padding attribute helps add padding around the elements.
+         -->
+        <md-content layout="column" layout-padding>
+            <!-- md-card is a root element for individual items that constitue a card. -->
+            <md-card >
+                <!-- Header for the card. Usually describes category -->
+                <md-card-header>
+                    <!-- Avatar - symbolic representation of content in the card -->
+                    <md-card-avatar class="md-user-avatar">
+                        <md-icon md-svg-src="/images/ic_code_black_24px.svg"></md-icon>
+                    </md-card-avatar>
+                    <!-- Header content -->
+                    <md-header-text>
+                        <div class="md-title">JavaScript Library</div>
+                        <div class="md-subhead">Explore and share</div>
+                    </md-header-text>
+                </md-card-header>
+                <!-- Workspace or the main content of the card -->
+                <md-card-content>
+                    <!-- Card title content -->
+                    <md-card-title layout-align="center center">
+                        <md-card-title-media flex="50">
+                            <images src="/images/angular-logo.png" class="md-media-md" alt="AngularJS">
+                        </md-card-title-media>
+                        <!-- Title caption and description -->
+                        <md-card-title-text flex="50">
+                            <span class="md-headline">Angular Material</span>
+                            <span class="md-subhead">Material Design Implementation with AngularJS</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <p>For building great applications that are responsive and adhers to Material Design specifications, Angular
+                        Material is an obvious choice</p>
+                </md-card-content>
+                <!-- Actions or buttons that you might need on card -->
+                <md-card-actions layout-align="end end">
+                    <md-button class="md-raised md-primary">Share</md-button>
+                    <md-button class="md-raised md-primary">Bookmark</md-button>
+                </md-card-actions>
+                
+                <!-- Card footer -->
+                <md-card-footer>
+                    <span>Copyright - sample text.</span>
+                </md-card-footer>
+            </md-card>
+            <pre>
+                <code>
+            &lt;!-- md-card is a root element for individual items that constitue a card. --&gt;
+            &lt;md-card &gt;
+                &lt;!-- Header for the card. Usually describes category --&gt;
+                &lt;md-card-header&gt;
+                    &lt;!-- Avatar - symbolic representation of content in the card --&gt;
+                    &lt;md-card-avatar class=&quot;md-user-avatar&quot;&gt;
+                        &lt;md-icon md-svg-src=&quot;images/ic_code_black_24px.svg&quot;&gt;&lt;/md-icon&gt;
+                    &lt;/md-card-avatar&gt;
+                    &lt;!-- Header content --&gt;
+                    &lt;md-header-text&gt;
+                        &lt;div class=&quot;md-title&quot;&gt;JavaScript Library&lt;/div&gt;
+                        &lt;div class=&quot;md-subhead&quot;&gt;Explore and share&lt;/div&gt;
+                    &lt;/md-header-text&gt;
+                &lt;/md-card-header&gt;
+                &lt;!-- Workspace or the main content of the card --&gt;
+                &lt;md-card-content&gt;
+                    &lt;!-- Card title content --&gt;
+                    &lt;md-card-title layout-align=&quot;center center&quot;&gt;
+                        &lt;md-card-title-media flex=&quot;50&quot;&gt;
+                            &lt;images src=&quot;images/angular-logo.png&quot; class=&quot;md-media-md&quot; alt=&quot;AngularJS&quot;&gt;
+                        &lt;/md-card-title-media&gt;
+                        &lt;!-- Title caption and description --&gt;
+                        &lt;md-card-title-text flex=&quot;50&quot;&gt;
+                            &lt;span class=&quot;md-headline&quot;&gt;Angular Material&lt;/span&gt;
+                            &lt;span class=&quot;md-subhead&quot;&gt;Material Design Implementation with AngularJS&lt;/span&gt;
+                        &lt;/md-card-title-text&gt;
+                    &lt;/md-card-title&gt;
+                    &lt;p&gt;For building great applications that are responsive and adhers to Material Design specifications, Angular
+                        Material is an obvious choice&lt;/p&gt;
+                &lt;/md-card-content&gt;
+                &lt;!-- Actions or buttons that you might need on card --&gt;
+                &lt;md-card-actions layout-align=&quot;end end&quot;&gt;
+                    &lt;md-button class=&quot;md-raised md-primary&quot;&gt;Share&lt;/md-button&gt;
+                    &lt;md-button class=&quot;md-raised md-primary&quot;&gt;Bookmark&lt;/md-button&gt;
+                &lt;/md-card-actions&gt;
+                
+                &lt;!-- Card footer --&gt;
+                &lt;md-card-footer&gt;
+                    &lt;span&gt;Copyright - sample text.&lt;/span&gt;
+                &lt;/md-card-footer&gt;
+            &lt;/md-card&gt;                    
+                </code>
+            </pre>
+
+        </md-content>
+    </div>
+
+     <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+</html>

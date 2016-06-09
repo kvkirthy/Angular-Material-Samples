@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    
+    <style>
+        pre{
+            background-color: lightgray;
+        }
+    </style>
+
+	<title>Angular Material Sample</title>
+</head>
+<body ng-app="sampleApp" ng-cloak>
+        <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>Select Options - Form Fields Samples</h3>
+    </md-toolbar>
+    <md-content flex layout="row" layout-padding>
+        <div flex ng-controller="selectSampleController" layout="column">
+            
+            <div>
+                <h3>Select dropdown</h3>
+                <!-- 
+                    ng-model: On the controller, read selected superhero value using a variable selectedSuperHero
+                -->
+                <md-select flex-gt-sm="50" ng-model="selectedSuperHero" placeholder="Select your favorite super hero">
+                    <!-- Option groups to logically separate the list -->
+                    <md-optgroup label="Marvel">   
+                        <!-- loop through superheroes with a filter on Marvel.
+                             Show only Marvel heroes in this group.
+                         -->
+                        <md-option ng-value="item" ng-repeat="item in superHeroes|filter:'Marvel'">{{item.name}}</md-option> 
+                    </md-optgroup>
+                        <!-- loop through superheroes with a filter on Disney.
+                             Show only Disney heroes in this group.
+                         -->
+                    <md-optgroup label="Disney">   
+                        <md-option ng-value="item" ng-repeat="item in superHeroes|filter:'Disney'">{{item.name}}</md-option> 
+                    </md-optgroup>   
+                         <!-- loop through superheroes with a filter on Indian.
+                             Show only Indian heroes in this group.
+                         -->     
+                    <md-optgroup label="Indian">   
+                        <md-option ng-value="item" ng-repeat="item in superHeroes|filter:'Indian'">{{item.name}}</md-option> 
+                    </md-optgroup>          
+                </md-select>
+                <pre>
+                    <code>
+                 &lt;!-- 
+                    ng-model: On the controller, read selected superhero value using a variable selectedSuperHero
+                --&gt;
+                &lt;md-select flex-gt-sm=&quot;50&quot; ng-model=&quot;selectedSuperHero&quot; placeholder=&quot;Select your favorite super hero&quot;&gt;
+                    &lt;!-- Option groups to logically separate the list --&gt;
+                    &lt;md-optgroup label=&quot;Marvel&quot;&gt;   
+                        &lt;!-- loop through superheroes with a filter on Marvel.
+                             Show only Marvel heroes in this group.
+                         --&gt;
+                        &lt;md-option ng-value=&quot;item&quot; ng-repeat=&quot;item in superHeroes|filter:'Marvel'&quot;&gt;{{item.name}}&lt;/md-option&gt; 
+                    &lt;/md-optgroup&gt;
+                        &lt;!-- loop through superheroes with a filter on Disney.
+                             Show only Disney heroes in this group.
+                         --&gt;
+                    &lt;md-optgroup label=&quot;Disney&quot;&gt;   
+                        &lt;md-option ng-value=&quot;item&quot; ng-repeat=&quot;item in superHeroes|filter:'Disney'&quot;&gt;{{item.name}}&lt;/md-option&gt; 
+                    &lt;/md-optgroup&gt;   
+                         &lt;!-- loop through superheroes with a filter on Indian.
+                             Show only Indian heroes in this group.
+                         --&gt;     
+                    &lt;md-optgroup label=&quot;Indian&quot;&gt;   
+                        &lt;md-option ng-value=&quot;item&quot; ng-repeat=&quot;item in superHeroes|filter:'Indian'&quot;&gt;{{item.name}}&lt;/md-option&gt; 
+                    &lt;/md-optgroup&gt;          
+                &lt;/md-select&gt;                       
+                    </code>
+                </pre>
+                <div>&nbsp;</div>
+            </div>
+            
+            <div flex>
+                <h3>Defferred loading of dropdown options.</h3>
+                <!-- 
+                    This dropdown demonstrates deferred loading of data. We might be making an API call.
+                    However, in the sample we mimic deferred loading with a timeout.
+                    
+                    Consider following controller function. They array bound to the control is updated after 2 seconds (5000 milliseconds)
+                    $scope.loadSuperHeroes = function(){
+                        $timeout(function(){
+                            $scope.superHeroesDeferred = [
+                                {id:1, name:"Iron Man", category: "Marvel"},
+                                {id:2, name:"Mowgli", category: "Disney"},
+                                {id:3, name: "Spiderman", category: "Marvel"},
+                                {id:4, name:"Superman", category: "DC Comics"},
+                                {id:5, name:"Chota Bheem", category: "Indian"}
+                            ];       
+                        }, 2000);  
+                    };             
+                    
+                    This function is called on md-on-open event & md-on-close is called on selection of an option    
+                    
+                    // Called on selecting a dropdown option. THe md-on-close event is fired on md-select directive
+                    $scope.superHeroSelectionComplete = function(){
+                        if($scope.selectedSuperHero){
+                            // ngModel on the element/directive is selectedSuperHero
+                            console.log($scope.selectedSuperHero.name);        
+                        }     
+                    };                    
+                -->
+                <md-select flex-gt-sm="50" ng-model="selectedSuperHero"  md-on-open="loadSuperHeroes()" md-on-close="superHeroSelectionComplete()" placeholder="Select your favorite super hero">
+                    <!-- Option groups to logically separate the list -->
+                    <md-optgroup label="Marvel">   
+                        <!-- loop through superheroes with a filter on Marvel.
+                             Show only Marvel heroes in this group.
+                         -->
+                        <md-option ng-value="item" ng-repeat="item in superHeroesDeferred|filter:'Marvel'">{{item.name}}</md-option> 
+                    </md-optgroup>
+                        <!-- loop through superheroes with a filter on Disney.
+                             Show only Disney heroes in this group.
+                         -->
+                    <md-optgroup label="Disney">   
+                        <md-option ng-value="item" ng-repeat="item in superHeroesDeferred|filter:'Disney'">{{item.name}}</md-option> 
+                    </md-optgroup>   
+                         <!-- loop through superheroes with a filter on Indian.
+                             Show only Indian heroes in this group.
+                         -->     
+                    <md-optgroup label="Indian">   
+                        <md-option ng-value="item" ng-repeat="item in superHeroesDeferred|filter:'Indian'">{{item.name}}</md-option> 
+                    </md-optgroup>          
+                </md-select>
+                <pre>
+                    <code>
+                 &lt;!-- 
+                    This dropdown demonstrates deferred loading of data. We might be making an API call.
+                    However, in the sample we mimic deferred loading with a timeout.
+                    
+                    Consider following controller function. They array bound to the control is updated after 2 seconds (2000 milliseconds)
+                    $scope.loadSuperHeroes = function(){
+                        $timeout(function(){
+                            $scope.superHeroesDeferred = [
+                                {id:1, name:"Iron Man", category: "Marvel"},
+                                {id:2, name:"Mowgli", category: "Disney"},
+                                {id:3, name: "Spiderman", category: "Marvel"},
+                                {id:4, name:"Superman", category: "DC Comics"},
+                                {id:5, name:"Chota Bheem", category: "Indian"}
+                            ];       
+                        }, 2000);  
+                    };                
+                    
+                    // Called on selecting a dropdown option. A callback to md-on-close is provided md-select directive
+                    $scope.superHeroSelectionComplete = function(){
+                        if($scope.selectedSuperHero){
+                            // ngModel on the element/directive is selectedSuperHero
+                            console.log($scope.selectedSuperHero.name);        
+                        }     
+                    };                     
+                --&gt;
+                &lt;md-select flex-gt-sm=&quot;50&quot; ng-model=&quot;selectedSuperHero&quot;  md-on-open=&quot;loadSuperHeroes()&quot; md-on-close=&quot;superHeroSelectionComplete()&quot; placeholder=&quot;Select your favorite super hero&quot;&gt;
+                    &lt;!-- Option groups to logically separate the list --&gt;
+                    &lt;md-optgroup label=&quot;Marvel&quot;&gt;   
+                        &lt;!-- loop through superheroes with a filter on Marvel.
+                             Show only Marvel heroes in this group.
+                         --&gt;
+                        &lt;md-option ng-value=&quot;item&quot; ng-repeat=&quot;item in superHeroesDeferred|filter:'Marvel'&quot;&gt;{{item.name}}&lt;/md-option&gt; 
+                    &lt;/md-optgroup&gt;
+                        &lt;!-- loop through superheroes with a filter on Disney.
+                             Show only Disney heroes in this group.
+                         --&gt;
+                    &lt;md-optgroup label=&quot;Disney&quot;&gt;   
+                        &lt;md-option ng-value=&quot;item&quot; ng-repeat=&quot;item in superHeroesDeferred|filter:'Disney'&quot;&gt;{{item.name}}&lt;/md-option&gt; 
+                    &lt;/md-optgroup&gt;   
+                         &lt;!-- loop through superheroes with a filter on Indian.
+                             Show only Indian heroes in this group.
+                         --&gt;     
+                    &lt;md-optgroup label=&quot;Indian&quot;&gt;   
+                        &lt;md-option ng-value=&quot;item&quot; ng-repeat=&quot;item in superHeroesDeferred|filter:'Indian'&quot;&gt;{{item.name}}&lt;/md-option&gt; 
+                    &lt;/md-optgroup&gt;          
+                &lt;/md-select&gt;                       
+                    </code>
+                </pre>
+                <div>&nbsp;</div>
+            </div>           
+    </md-content>
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+
+
+</body>
+</html>

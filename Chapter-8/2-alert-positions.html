@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <!--<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>-->
+    <style>
+        .pink {
+            background: lightpink;
+        }
+        
+        .green {
+            background: lightgreen;
+        }
+        
+        .yellow {
+            background: lightyellow;
+        }
+        
+        .blue {
+            background: lightblue;
+        }
+        
+        .gray {
+            background: lightgray;
+        }
+        
+        pre {
+            background-color: lightgrey;
+        }
+    </style>
+    <title>E6 Angular Material Sample</title>
+</head>
+
+<body ng-app="sampleApp" ng-cloak>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Alerts & Dialogues: Open from & close to a direction</h2>
+        </div>
+    </md-toolbar>
+    <md-content layout-padding layout="column" ng-controller="dialogAndAlertController" layout-padding>
+        <div layout="row" flex>
+            <div flex="10" id="topLeft" style="background-color:skyblue"></div>
+            <div flex="80" style="background-color:yellow">&nbsp;</div>
+            <div flex id="topRight" style="background-color:lime"></div>
+        </div>
+        <!-- 
+             Show simple Angular Material style alert message on click of the button
+             Use showSimpleMessage() controller function for showing the alert message.
+             
+            // Create alert message object. 
+            var aSimpleAlert = $mdDialog
+            .alert()
+            .parent(angular.element(document.body))
+            .title("Welcome ")
+            .textContent(" This is a simple alert message ")
+            .ok("Okay ")
+            ;             
+             
+            // Function to demonstrate opening from and closing in a direction
+            $scope.configureAndOpenAlertFromADirection = function(){
+            // Configure alert object to open from a div element with id topRight
+            aSimpleAlert.openFrom("#topRight");
+            // Configure alert object to close to a div element with id topLeft        
+            aSimpleAlert.closeTo("#topLeft");
+            // Show the alert
+            $mdDialog.show(aSimpleAlert);
+            };          
+          -->
+        <div>
+            <md-button ng-click="configureAndOpenAlertFromADirection() " class="md-raised md-primary ">Click to show alert</md-button>
+        </div>
+
+        <pre>
+            <code>
+       &lt;!-- 
+             Show simple Angular Material style alert message on click of the button
+                          
+            // Create alert message object. 
+            var aSimpleAlert = $mdDialog
+            .alert()
+            .parent(angular.element(document.body))
+            .title(&quot;Welcome &quot;)
+            .textContent(&quot; This is a simple alert message &quot;)
+            .ok(&quot;Okay &quot;)
+            ;             
+             
+            // Function to demonstrate opening from and closing in a direction
+            $scope.configureAndOpenAlertFromADirection = function(){
+            <strong>
+                // Configure alert object to open from a div element with id topRight
+                aSimpleAlert.openFrom(&quot;#topRight&quot;);
+                // Configure alert object to close to a div element with id topLeft        
+                aSimpleAlert.closeTo(&quot;#topLeft&quot;);
+            </strong>
+                // Show the alert
+                $mdDialog.show(aSimpleAlert);
+            };          
+          --&gt;
+        &lt;md-button ng-click=&quot;configureAndOpenAlertFromADirection() &quot; class=&quot;md-raised md-primary &quot;&gt;Click to show alert&lt;/md-button&gt;
+               
+            </code>
+        </pre>
+
+        <!-- 
+            On click of this button, show confirm dialog using a controller function 
+            
+            // Create confirm dialog object. 
+            var aConfirmDialog = $mdDialog
+            .confirm()
+            .parent(angular.element(document.body))
+            .title("Confirm ")
+            .textContent(" Are you sure to continue? ")
+            .ok("Yes ")
+            .cancel("No ")
+            .openFrom("#left ")
+            ;          
+            
+            $scope.showConfirmDialog = function(event){
+                // Show confirm dialog. Use the object created earlier.
+                    $mdDialog.show(aConfirmDialog).then(function(result){
+                        // Runs this code when user responds positively on confirm dailog (ok button)
+                        console.log(result);
+                        console.log(result + " - User selected yes ");
+                    }, function() {
+                        // runs this code when user cancels the dialog.
+                        console.log("User selected no ");
+                    });       
+                    
+                    // Demonstrate closing the dialog automatically after a while. 
+                    $timeout(function(){
+                        $mdDialog.hide(aConfirmDialog);
+                    }, 5000);
+                };             
+        -->
+        <div>
+            <md-button ng-click="configureAndOpenDialogFromADirection($event) " class="md-primary md-raised ">Click to show confirm dialog</md-button>
+        </div>
+        <pre>
+            <code>
+                &lt;!-- 
+                    On click of this button, show confirm dialog using a controller function 
+                    
+                    // Create confirm dialog object. 
+                    var aConfirmDialog = $mdDialog
+                    .confirm()
+                    .parent(angular.element(document.body))
+                    .title(&quot;Confirm&quot;)
+                    .textContent(&quot; Are you sure to continue?&quot;)
+                    .ok(&quot;Yes&quot;)
+                    .cancel(&quot;No&quot;)
+                    .openFrom(&quot;#left&quot;)
+                    ;          
+                    
+                    // Function to demonstrate opening from and closing in a direction
+                    $scope.configureAndOpenDialogFromADirection = function(){
+                    <strong>
+                    
+                        // Configure dialog object to open from a div element with id bottomLeft
+                        aConfirmDialog.openFrom("#bottomLeft");
+                        // Configure dialog object to close to a div element with id bottomRight        
+                        aConfirmDialog.closeTo("#bottomRight");
+                    </strong>
+                        // Show the alert
+                        $mdDialog.show(aConfirmDialog);
+                    }             
+                --&gt;
+                &lt;md-button ng-click=&quot;showConfirmDialog($event)&quot; class=&quot;md-primary&quot;&gt;Confirm Dialog&lt;/md-button&gt;
+                                
+            </code>
+        </pre>
+        <div layout="row" flex>
+            <div flex="10" id="bottomLeft" style="background-color:lightblue"></div>
+            <div flex="80" style="background-color:green">&nbsp;</div>
+            <div flex id="bottomRight" style="background-color:lightpink"></div>
+        </div>
+    </md-content>
+
+    <script type="text/ng-template " id="dialogTemplate.html ">
+        <md-dialog>
+            <md-toolbar>
+                <div class="md-toolbar-tools ">
+                    <h2>Welcome</h2>
+                </div>
+            </md-toolbar>
+            <md-dialog-content class="md-dialog-content ">
+                <h2>{{title}}</h2>
+                <div layout="column ">
+                    <strong>
+                    Dialog begins here. Click anywhere outside the dialog to close it.
+                    </strong>
+                    <br/>
+                    <br/>
+                    <div layout="row ">
+                        <sup>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+                         </sup>
+                    </div>
+
+                </div>
+
+
+            </md-dialog-content>
+        </md-dialog>
+    </script>
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+
+</body>
+
+</html>

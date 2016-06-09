@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    
+    <style>
+        pre{
+            background-color: lightgray;
+        }
+    </style>
+
+	<title>Angular Material Sample</title>
+</head>
+<body ng-app="sampleApp" ng-cloak>
+        <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>Radio Buttons & Checkboxes - Form Fields Samples</h3>
+    </md-toolbar>
+    <md-content flex layout="row" layout-padding>
+        <div flex ng-controller="selectSampleController" layout="column">            
+           <!--
+               Use md-radio-group for collection of radio buttons. One option out of the available could be selected in a group.
+               Code each radio button with md-radio-button. 
+               In the sample below, we are looping through the array radioSuperheroes
+               -->
+            <strong>Radio Buttons - Sample Selected {{radioSelectedSuperHero.name || 'none'}}.</strong>
+            <md-radio-group ng-model="radioSelectedSuperHero">
+                <md-radio-button ng-value="item" ng-repeat="item in radioSuperheroes">{{item.name}}</md-radio-button>
+            </md-radio-group>
+            
+            <pre>
+                <code>
+
+            &lt;md-radio-group ng-model=&quot;radioSelectedSuperHero&quot;&gt;
+                &lt;md-radio-button ng-value=&quot;item&quot; ng-repeat=&quot;item in radioSuperheroes&quot;&gt;{{item.name}}&lt;/md-radio-button&gt;
+            &lt;/md-radio-group&gt;
+            &lt;div&gt;
+                &lt;strong&gt;Favorite Super Hero&lt;/strong&gt;
+                &lt;div ng-repeat=&quot;item in checkSuperHeroes&quot;&gt;
+                     &lt;md-checkbox ng-change=&quot;runWhenSelected(item.isChecked)&quot; ng-model=&quot;item.isChecked&quot;&gt;{{item.name}}&lt;/md-checkbox&gt;  
+                &lt;/div&gt;
+            &lt;/div&gt;                   
+                </code>
+            </pre>
+                        
+            <div>
+                <strong>Checkbox Sample</strong>
+                <!--
+                    Use ng-change event to identify selection change. Controller function below,
+                    $scope.runWhenSelected = function(item){
+                        if(item.isChecked){
+                        // Add selected item to scope object
+                        $scope.selectedSuperheroesCB.push(item);
+                        }else{
+                            // Remove an unselected item from the scope object
+                            $scope.selectedSuperheroesCB = $scope.selectedSuperheroesCB.filter(function(arrayItem){ 
+                                return arrayItem.name !== item.name; 
+                            });
+                        }
+                    }                    
+                 -->
+                <div>&nbsp;</div>
+                <div>Selected: </div><span ng-repeat="item in selectedSuperheroesCB">{{item.name}} &nbsp;</span>
+                <div>&nbsp;</div>
+                <div ng-repeat="item in checkSuperHeroes">
+                     <md-checkbox ng-change="runWhenSelected(item)" ng-model="item.isChecked">{{item.name}}</md-checkbox>  
+                </div>
+            </div>
+            
+            <pre>
+                <code>
+                    &lt;div&gt;
+                        &lt;strong&gt;Checkbox Sample&lt;/strong&gt;
+                        &lt;!--
+                            Use ng-change event to identify selection change. Controller function below,  
+                            $scope.runWhenSelected = function(item){
+                                if(item.isChecked){
+                                // Add selected item to scope object
+                                $scope.selectedSuperheroesCB.push(item);
+                                }else{
+                                    // Remove an unselected item from the scope object
+                                    $scope.selectedSuperheroesCB = $scope.selectedSuperheroesCB.filter(function(arrayItem){ 
+                                        return arrayItem.name !== item.name; 
+                                    });
+                                }
+                            }                    
+                        --&gt;
+                        &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;div&gt;Selected: &lt;/div&gt;&lt;span ng-repeat=&quot;item in selectedSuperheroesCB&quot;&gt;{{item.name}} &amp;nbsp;&lt;/span&gt;
+                        &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;div ng-repeat=&quot;item in checkSuperHeroes&quot;&gt;
+                            &lt;md-checkbox ng-change=&quot;runWhenSelected(item)&quot; ng-model=&quot;item.isChecked&quot;&gt;{{item.name}}&lt;/md-checkbox&gt;  
+                        &lt;/div&gt;
+                    &lt;/div&gt;                    
+                </code>
+            </pre>
+            
+
+           
+        </div>            
+
+    </md-content>
+
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+
+
+</body>
+</html>

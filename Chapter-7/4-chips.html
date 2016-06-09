@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    
+    <style>
+        pre{
+            background-color: lightgray;
+        }
+    </style>
+
+	<title>Angular Material Sample</title>
+</head>
+<body ng-app="sampleApp" ng-cloak>
+        <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>Chips</h3>
+    </md-toolbar>
+    <md-content flex layout="row" layout-padding>
+        <div flex ng-controller="selectSampleController" layout="column">
+            <h3>Basic Chips</h3>
+            <!-- 
+                Use md-chips for creating tags.
+                ng-model for all added tags.
+                Placeholder text, when no tag was added
+                Secondary Placeholder text, when at least ontag was added
+             -->
+            <md-chips ng-model="tagsOnMowgli" placeholder="AddEnter tags on Mowgli" secondary-placeholder="Mowgli">
+            </md-chips>
+            
+            <pre>
+                <code>
+             &lt;!-- 
+                Use md-chips for creating tags.
+                ng-model for all added tags.
+                Placeholder text, when no tag was added
+                Secondary Placeholder text, when at least ontag was added
+             --&gt;
+            &lt;md-chips ng-model=&quot;tagsOnMowgli&quot; placeholder=&quot;AddEnter tags on Mowgli&quot; secondary-placeholder=&quot;Mowgli&quot;&gt;
+            &lt;/md-chips&gt;                   
+                </code>
+            </pre>
+            
+            <!--
+                md-transform-chips, the provided callback function to format text provided as a chip/tag.
+                // As chip/tag is keyed in, logic to format the chip.
+                $scope.transformChip = function(chip){
+                if(chip){
+                    for(var state in $scope.uSStateList){
+                        if($scope.uSStateList[state] === chip
+                                || state === chip){
+                            return state;
+                        }
+                    }
+                    
+                    return null;
+                }  
+                };              
+             -->
+             <h3>Transform the selected chip</h3>
+             <sup>Enter a US State name and press enter to see the transformation behavior.</sup>
+            <forms name="statesForm">
+                <!-- the TransformChip() function is invoked for every new chip. It can validate and transform user provided input.
+                    In the sample we change a full state name to two character code. For example Minnesota to MN
+                    
+                    Here is the function in controller,
+                    
+                    // As chip/tag is keyed in, logic to format the chip.
+                    $scope.transformChip = function(chip){
+                    if(chip){
+                        for(var state in $scope.uSStateList){
+                            if($scope.uSStateList[state].toLowerCase() === chip.toLowerCase()
+                                    || state.toLowerCase() === chip.toLowerCase()){
+                                return state;
+                            }
+                        }
+                        
+                        return null;
+                    }  
+                    };                    
+                    
+                 -->
+                <md-chips name="states" ng-model="selectedStateList" md-transform-chip="transformChip($chip)" placeholder="Add States" secondary-placeholder="States">
+                    <!-- template for transformed chip -->
+                    <md-chip-template>
+                        Send the package to <span>{{$chip}}</span>
+                    </md-chip-template>
+                </md-chips>
+            </forms>
+            <pre>
+                <code>
+             &lt;forms name=&quot;statesForm&quot;&gt;
+                &lt;!-- the TransformChip() function is invoked for every new chip. It can validate and transform user provided input.
+                    In the sample we change a full state name to two character code. For example Minnesota to MN
+                    
+                   Here is the function in controller,
+                    
+                    // As chip/tag is keyed in, logic to format the chip.
+                    $scope.transformChip = function(chip){
+                    if(chip){
+                        for(var state in $scope.uSStateList){
+                            if($scope.uSStateList[state].toLowerCase() === chip.toLowerCase()
+                                    || state.toLowerCase() === chip.toLowerCase()){
+                                return state;
+                            }
+                        }
+                        
+                        return null;
+                    }  
+                    };  
+                    
+                 --&gt;            
+                &lt;md-chips name=&quot;states&quot; ng-model=&quot;selectedStateList&quot; md-transform-chip=&quot;transformChip($chip)&quot; placeholder=&quot;Add States&quot; secondary-placeholder=&quot;States&quot;&gt;
+                    &lt;!-- template for formatting the chip --&gt;
+                    &lt;md-chip-template&gt;
+                        Send the package to &lt;span&gt;{{$chip}}&lt;/span&gt;
+                    &lt;/md-chip-template&gt;
+                &lt;/md-chips&gt;
+            &lt;/forms&gt;                   
+                </code>
+            </pre>
+            
+            <br/>
+            <strong>Contact Chips - typeahead for chips</strong>
+            <sup>Start typing a Superhero name. If it's part of our list, will show that in the typeahead already.</sup>
+            <!-- 
+                Use md-contact-chips directive/element. ng-model variable will hold all selected contacts.
+                md-contacts attribute - on keystore following function on scope will run that will filter by given input.
+                
+                $scope.filterSuperheroesForContactChip = function(filterString){
+                    var superheroes = [
+                            {id:1, name:"Iron Man", category: "Marvel"},
+                            {id:2, name:"Mowgli", category: "Disney"},
+                            {id:3, name: "Spiderman", category: "Marvel"},
+                            {id:4, name:"Superman", category: "DC Comics"},
+                            {id:5, name:"Chota Bheem", category: "Indian"}
+                        ];       
+                        
+                    if(filterString){
+                    var result = superheroes.filter(function(item){
+                            return item.name.toLowerCase().indexOf(filterString.toLowerCase()) >= 0;
+                        });
+                        console.log(result);
+                        return result;
+                        
+                    }else{
+                        return superheroes;
+                    }
+                        
+                };                 
+            -->
+            <md-contact-chips ng-model="contactChipSuperHeroes" md-contacts="filterSuperheroesForContactChip($query)" md-contact-name="name" placeholder="Select your superhero">
+            </md-contact-chips>
+            
+            <pre>
+                <code>
+            &lt;!-- 
+                Use md-contact-chips directive/element. ng-model variable will hold all selected contacts.
+                md-contacts attribute - on keystore following function on scope will run that will filter by given input.
+                
+                $scope.filterSuperheroesForContactChip = function(filterString){
+                    var superheroes = [
+                            {id:1, name:&quot;Iron Man&quot;, category: &quot;Marvel&quot;},
+                            {id:2, name:&quot;Mowgli&quot;, category: &quot;Disney&quot;},
+                            {id:3, name: &quot;Spiderman&quot;, category: &quot;Marvel&quot;},
+                            {id:4, name:&quot;Superman&quot;, category: &quot;DC Comics&quot;},
+                            {id:5, name:&quot;Chota Bheem&quot;, category: &quot;Indian&quot;}
+                        ];       
+                        
+                    if(filterString){
+                    var result = superheroes.filter(function(item){
+                            return item.name.toLowerCase().indexOf(filterString.toLowerCase()) &gt;= 0;
+                        });
+                        console.log(result);
+                        return result;
+                        
+                    }else{
+                        return superheroes;
+                    }
+                        
+                };                 
+            --&gt;
+            &lt;md-contact-chips ng-model=&quot;contactChipSuperHeroes&quot; md-contacts=&quot;filterSuperheroesForContactChip($query)&quot; md-contact-name=&quot;name&quot; placeholder=&quot;Select your superhero&quot;&gt;
+            &lt;/md-contact-chips&gt;                    
+                </code>
+            </pre>
+            
+    </md-content>
+
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+
+
+</body>
+</html>

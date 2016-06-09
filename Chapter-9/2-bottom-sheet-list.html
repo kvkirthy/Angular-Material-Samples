@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <style>
+        pre {
+            background-color: lightgray;
+        }
+    </style>
+    <title>E6 Angular Material Sample</title>
+</head>
+
+<body ng-app="sampleApp" ng-cloak layout="column">
+
+
+    <script type="text/ng-template" id="/bottom-sheet-template.html">
+        <md-bottom-sheet class="md-list">
+            <md-subheader>
+                Choose Login Mechanism
+            </md-subheader>
+            <md-list>
+                <md-list-item>
+                    <md-button ng-click="defaultAuthenticationHandler()">
+                        <md-icon md-svg-src="/images/ic_verified_user.svg"></md-icon>
+                        <span>User Id & Password</span>
+                    </md-button>
+                </md-list-item>
+                <md-list-item>
+                    <md-button ng-click="fingerprintHandler()">
+                        <md-icon md-svg-src="/images/ic_fingerprint.svg"></md-icon>
+                        <span>Fingerprint</span>
+                    </md-button>
+                </md-list-item>
+                <md-list-item>
+                    <md-button ng-click="facialRecognitionHandler()">
+                        <md-icon md-svg-src="/images/ic_camera.svg"></md-icon>
+                        <span>Facial Recognition</span>
+                    </md-button>
+                </md-list-item>
+            </md-list>
+        </md-bottom-sheet>
+    </script>
+
+    <script>
+        angular.module("sampleApp", ["ngMaterial"])
+            .controller('sampleController',function($scope, $mdBottomSheet){
+                $scope.showBottomSheet = function(){
+                    $mdBottomSheet.show({
+                       templateUrl: "/bottom-sheet-template.html",
+                       controller: function($scope){
+                           $scope.defaultAuthenticationHandler = function(){
+                               console.log("Take user to login form");
+                                $mdBottomSheet.hide();                                
+                           }
+                           $scope.fingerprintHandler = function(){
+                              console.log("Let's authenticate user by fingerprints");  
+                                $mdBottomSheet.hide();                               
+                           };
+                           $scope.facialRecognitionHandler = function(){
+                                console.log("Use camera and identify the user"); 
+                                $mdBottomSheet.hide(); 
+                           };
+                       },
+                       disableBackdrop: true
+                    }).then(function(){
+                        console.log("Promise resolved");
+                    }, function(){
+                        console.log("Promise rejected");
+                    });
+                };
+            })
+    </script>
+
+    <md-toolbar layout-padding>
+        <div class="md-toolbar-tools">
+            <h2>Bottom sheet - list view</h2>
+        </div>
+    </md-toolbar>
+
+    <md-content layout-padding layout="column" flex layout-padding ng-controller="sampleController">
+        <md-button ng-click="showBottomSheet()" class="md-primary">Login</md-button>
+
+        <pre>
+        <code>
+            <strong>Template code</strong>
+         &lt;md-bottom-sheet class=&quot;md-list&quot;&gt;
+             &lt;md-subheader&gt;
+                Choose Login Mechanism
+            &lt;/md-subheader&gt;
+            &lt;md-list &gt;
+                &lt;md-list-item&gt;
+                    &lt;md-button ng-click=&quot;defaultAuthenticationHandler()&quot;&gt;
+                        &lt;md-icon md-svg-src=&quot;/images/ic_verified_user.svg&quot;&gt;&lt;/md-icon&gt;
+                        &lt;span&gt;User Id &amp; Password&lt;/span&gt;
+                    &lt;/md-button&gt;    
+                &lt;/md-list-item&gt;
+                &lt;md-list-item&gt;
+                    &lt;md-button ng-click=&quot;fingerprintHandler()&quot;&gt;
+                        &lt;md-icon md-svg-src=&quot;/images/ic_fingerprint.svg&quot;&gt;&lt;/md-icon&gt;
+                            &lt;span&gt;Fingerprint&lt;/span&gt;
+                    &lt;/md-button&gt;    
+                &lt;/md-list-item&gt;
+                &lt;md-list-item&gt;
+                    &lt;md-button ng-click=&quot;facialRecognitionHandler()&quot;&gt;
+                        &lt;md-icon md-svg-src=&quot;/images/ic_camera.svg&quot;&gt;&lt;/md-icon&gt;
+                        &lt;span&gt;Facial Recognition&lt;/span&gt;
+                    &lt;/md-button&gt;
+                &lt;/md-list-item&gt;
+            &lt;/md-list&gt;
+           &lt;/md-bottom-sheet&gt;      
+           
+           <strong>Controller code </strong>     
+                   angular.module("sampleApp", ["ngMaterial"])
+            .controller('sampleController',function($scope, $mdBottomSheet){
+                $scope.showBottomSheet = function(){
+                    $mdBottomSheet.show({
+                       templateUrl: "/bottom-sheet-template.html",
+                       controller: function($scope){
+                           $scope.defaultAuthenticationHandler = function(){
+                               console.log("Take user to login form");
+                                $mdBottomSheet.hide();                                
+                           }
+                           $scope.fingerprintHandler = function(){
+                              console.log("Let's authenticate user by fingerprints");  
+                                $mdBottomSheet.hide();                               
+                           };
+                           $scope.facialRecognitionHandler = function(){
+                                console.log("Use camera and identify the user"); 
+                                $mdBottomSheet.hide(); 
+                           };
+                       },
+                       disableBackdrop: true
+                    }).then(function(){
+                        console.log("Promise resolved");
+                    }, function(){
+                        console.log("Promise rejected");
+                    });
+                };
+            })
+        </code>
+    </pre>
+
+    </md-content>
+
+</body>
+
+</html>

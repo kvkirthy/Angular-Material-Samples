@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <style>
+        .pink {
+            background: lightpink;
+        }
+        
+        .green {
+            background: lightgreen;
+        }
+        
+        .yellow {
+            background: lightyellow;
+        }
+        
+        .blue {
+            background: lightblue;
+        }
+        
+        .gray {
+            background: lightgray;
+        }
+        
+        pre {
+            background-color: lightgray;
+        }
+    </style>
+    <title>E6 Angular Material Sample</title>
+</head>
+
+<body ng-app="sampleApp" ng-cloak layout="column">
+
+    <script type="text/ng-template" id="dialogTemplate.html">
+
+    </script>
+
+    <md-toolbar layout-padding class="md-medium-tall" layout="row">
+        <div class="md-toolbar-tools" flex="30">
+            <h2>Toast Samples</h2>
+        </div>
+        <div id="advancedButton" flex="70"></div>
+        
+    </md-toolbar>
+
+    <md-content layout-padding ng-controller="toastSampleController" layout="column" layout-padding>
+        <!--
+            Show toast on click of the following button. 
+            A controller function invoked on click of the button uses $mdToast service to show the message.
+            
+            $scope.showBasicToast = function(){
+                $mdToast
+                    .showSimple("It calls for a toast")
+                    .then(function(){
+                        console.log("Done with the toast");
+                        
+                    });
+            }           
+        -->
+
+        <div>
+            <md-button ng-click="showBasicToast()" class="md-raised md-primary">Show Simple Toast</md-button>
+        </div>
+
+        <pre>
+            <code>
+        &lt;!--
+            Show toast on click of the following button. 
+            A controller function invoked on click of the button uses $mdToast service to show the message.
+            
+            $scope.showBasicToast = function(){
+                $mdToast
+                    .showSimple(&quot;It calls for a toast&quot;)
+                    .then(function(){
+                        console.log(&quot;Done with the toast&quot;);
+                    });
+            }           
+        --&gt;
+        &lt;md-button ng-click=&quot;showBasicToast()&quot; class=&quot;md-raised md-primary&quot;&gt;Show Simple Toast&lt;/md-button&gt;
+                        
+            </code>
+        </pre>
+        <!--
+            Click the following button to show a toast.
+
+            // Create toast object to be used elsewhere in the controller.
+            var toast = $mdToast
+                    .simple() // Use the API to  create a simple toast reference.
+                    .textContent("A new message arrived") // message on the toast
+                    .action("Star it!") // add an action to the toast message.
+                    .capsule(true); // Show rounded corners
+            
+            // As the function on scope is invoked from view, it shows already created toast.
+            $scope.showPresetToast = function(){
+                $mdToast
+                    .show(toast)
+                    .then(function(action){ // The call back is invoked as user interacts with the toast message
+                        console.log(action); 
+                    });
+            }
+            -->
+        <div>
+            <md-button class="md-primary md-raised" ng-click="showPresetToast()">Show a preset toast</md-button>
+        </div>
+        <pre>
+            <code>
+                &lt;!--
+                    Click the following button to show a toast.
+                &lt;md-button ng-click=&quot;showPresetToast()&quot;&gt;simple() Toast&lt;/md-button&gt;
+
+                    // Create toast object to be used elsewhere in the controller.
+                    var toast = $mdToast
+                            .simple() // Use the API to  create a simple toast reference.
+                            .textContent(&quot;A new message arrived&quot;) // message on the toast
+                            .action(&quot;Star it!&quot;) // add an action to the toast message.
+                            .capsule(true); // Show rounded corners
+                    
+                    // As the function on scope is invoked from view, it shows already created toast.
+                    $scope.showPresetToast = function(){
+                        $mdToast
+                            .show(toast)
+                            .then(function(action){ // The call back is invoked as user interacts with the toast message
+                                console.log(action); 
+                            });
+                    }
+                    --&gt;            
+                &lt;md-button ng-click=&quot;showPresetToast()&quot;&gt;Show a preset toast&lt;/md-button&gt;                          
+            </code>
+        </pre>
+
+        <!--
+            <md-button ng-click="showAdvCustomizedShow()">Highly Customized Toast</md-button>
+
+            A controller function creates and shows a customized toast            
+        
+            // Show customized toast
+            $scope.showAdvCustomizedShow = function(){
+                var parentVal = "Message from parent";
+                
+                var toastPreset = $mdToast.show({
+                    position: "top right", // position toast at any corner
+                    parent: angular.element(document.getElementById("advancedButton")),
+                    template: "<md-toast> <strong flex='85'><sup>Highly </sup>customized toast </strong> <md-button ng-click='closeToast()'>Close </md-button></md-toast>",
+                    hideDelay: 0, // do not automatically close.
+                    locals: {
+                        dynamicValue: parentVal // obtain value from parent
+                    },
+                    controller: function($scope, $mdToast, dynamicValue){
+                        console.log(dynamicValue);
+                        $scope.closeToast = function(){
+                            $mdToast.hide(toastPreset); // Close when a button in the template is clicked.
+                        };
+                    }
+                });
+            }
+            
+          -->
+        <div>
+            <md-button class="md-primary md-raised" ng-click="showAdvCustomizedShow()">Highly Customized Toast</md-button>
+
+        </div>
+
+        <pre>
+            <code>
+        &lt;!--
+            &lt;md-button ng-click=&quot;showAdvCustomizedShow()&quot;&gt;Highly Customized Toast&lt;/md-button&gt;
+
+            A controller function creates and shows a customized toast            
+        
+            // Show customized toast
+            $scope.showAdvCustomizedShow = function(){
+                var parentVal = &quot;Message from parent&quot;;
+                
+            var toastPreset = $mdToast.show({
+                position: "top right", // position toast at any corner
+                parent: angular.element(document.getElementById("advancedButton")), // Parent is an element ( a div tag)
+                template: "&lt;md-toast&gt; &lt;strong flex='85'&gt;&lt;sup&gt;Highly &lt;/sup&gt;customized toast &lt;/strong&gt; &lt;md-button ng-click='closeToast()'&gt;Close &lt;/md-button&gt;&lt;/md-toast&gt;",
+                hideDelay: 0, // do not automatically close.
+                locals: {
+                    dynamicValue: parentVal // obtain value from parent
+                },
+                controller: function($scope, $mdToast, dynamicValue){
+                    console.log(dynamicValue);
+                    $scope.closeToast = function(){
+                        $mdToast.hide(toastPreset); // Close when a button in the template is clicked.
+                    };
+                }
+            });
+            }
+            
+          --&gt;
+        
+        &lt;div id=&quot;advancedButton&quot;&gt;
+            &lt;md-button class=&quot;md-primary md-raised&quot; ng-click=&quot;showAdvCustomizedShow()&quot;&gt;Highly Customized Toast&lt;/md-button&gt;
+        &lt;/div&gt;                
+            </code>
+        </pre>
+
+    </md-content>
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+
+</body>
+
+</html>

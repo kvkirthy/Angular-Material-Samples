@@ -1,0 +1,154 @@
+<html>
+
+<head>
+    <title>FAB Speed Dial</title>
+
+    <style>
+        section {
+            background-color: lightblue
+        }
+        
+        pre {
+            background-color: lightgray
+        }
+    </style>
+</head>
+
+<body ng-app="sampleApp" layout="column">
+    <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>FAB Speed Dial Sample</h3>
+    </md-toolbar>
+    <md-content layout-padding flex>
+        <div layout-padding>
+            <h2>Workspace. Code snippet below,</h2>
+            <!--
+            A logic outside the FAB Speed Dial can control opening or clossing the component.
+            Following is a switch, but it could be more sophisticated logic. When the a condition is true, toggle open/close the FAB Menu
+        -->
+            <md-switch ng-model="isOpen">Control opening/closing the menu outside the FAB toolbar</md-switch>
+
+            <pre>
+                <code>
+        &lt;span ng-init=&quot;isOpen=true&quot;&gt;&lt;/span&gt;
+        &lt;!--
+            A logic outside the FAB Speed Dial can control opening or clossing the component.
+            Following is a switch, but it could be more sophisticated logic. When the a condition is true, toggle open/close the FAB Menu
+        --&gt;
+        &lt;md-switch ng-model=&quot;isOpen&quot;&gt;Control opening/closing the menu outside the FAB toolbar&lt;/md-switch&gt;
+
+        &lt;!-- 
+            At the root of speed dial component is the md-fab-speed-dial directive.
+             md-direction- Sets the direction to expand is upwards.
+             md-flig CSS class - animation while the speed dial is in use.
+             md-fab-buttom-right CSS class- position of the button on the page.
+             md-open in this sample is also controller by hover in and out. Review ng-mouseenter and ng-mouseleave
+             They toggle the speed dial.
+        
+        --&gt;
+        &lt;md-fab-speed-dial md-open=&quot;isOpen&quot; md-direction=&quot;up&quot; class=&quot;md-fling md-fab-bottom-right md-hover-full&quot; ng-mouseenter=&quot;isOpen=true&quot;
+            ng-mouseleave=&quot;isOpen=false&quot;&gt;
+            &lt;!-- Trigger button for speed dial. Notice it's a FAB button
+                ARIA Label - FAB Buttons don't have title for the screen readers to pick
+                For accessibility reasons we need ARIA label set. 
+                Otherwise it might result in warnings
+            --&gt;
+            &lt;md-fab-trigger&gt;
+                &lt;md-button class=&quot;md-fab&quot; aria-label=&quot;Settings&quot;&gt;
+                    &lt;md-icon md-svg-src=&quot;/images/ic_settings.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+            &lt;/md-fab-trigger&gt;
+
+            &lt;!--  Individual FAB options in the speed dial 
+                  Notice these are fab buttons. 
+                  md-mini is applied to make it a smaller sized FAB control
+            --&gt;
+            &lt;md-fab-actions&gt;
+                &lt;md-button class=&quot;md-fab md-primary md-mini&quot; aria-label=&quot;Bluetooth Settings&quot;&gt;
+                    &lt;!-- Each component provides descriptive text as tooltip
+                        Direction tooltip should appear is et by md-direction attribute.
+                     --&gt;
+                    &lt;md-tooltip md-direction=&quot;left&quot;&gt;Bluetooth&lt;/md-tooltip&gt;
+                    &lt;md-icon md-svg-src=&quot;/images/ic_settings_bluetooth.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+                &lt;md-button class=&quot;md-fab md-primary md-mini&quot; aria-label=&quot;Brightness Settings&quot;&gt;
+                    &lt;md-tooltip md-direction=&quot;left&quot;&gt;Brightness&lt;/md-tooltip&gt;
+                    &lt;md-icon md-svg-src=&quot;/images/ic_settings_brightness.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+                &lt;md-button class=&quot;md-fab md-primary md-mini&quot; aria-label=&quot;Display Settings&quot;&gt;
+                    &lt;md-tooltip md-direction=&quot;left&quot;&gt;Display Overscan&lt;/md-tooltip&gt;
+                    &lt;md-icon md-svg-src=&quot;/images/ic_settings_overscan.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+                &lt;md-button class=&quot;md-fab md-primary md-mini&quot; aria-label=&quot;Voice Settings&quot;&gt;
+                    &lt;md-tooltip md-direction=&quot;left&quot;&gt;Voice&lt;/md-tooltip&gt;
+                    &lt;md-icon md-svg-src=&quot;/images/ic_settings_voice.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+            &lt;/md-fab-actions&gt;
+        &lt;/md-fab-speed-dial&gt;                    
+                </code>
+            </pre>
+        </div>
+        <span ng-init="isOpen=true"></span>
+        <!-- 
+            At the root of speed dial component is the md-fab-speed-dial directive.
+             md-direction- Sets the direction to expand is upwards.
+             md-flig CSS class - animation while the speed dial is in use.
+             md-fab-buttom-right CSS class- position of the button on the page.
+             md-open in this sample is also controller by hover in and out. Review ng-mouseenter and ng-mouseleave
+             They toggle the speed dial.
+        
+        -->
+        <md-fab-speed-dial md-open="isOpen" md-direction="up" class="md-fling md-fab-bottom-right md-hover-full" ng-mouseenter="isOpen=true"
+            ng-mouseleave="isOpen=false">
+            <!-- Trigger button for speed dial. Notice it's a FAB button
+                ARIA Label - FAB Buttons don't have title for the screen readers to pick
+                For accessibility reasons we need ARIA label set. 
+                Otherwise it might result in warnings
+            -->
+            <md-fab-trigger>
+                <md-button class="md-fab" aria-label="Settings">
+                    <md-icon md-svg-src="/images/ic_settings.svg"></md-icon>
+                </md-button>
+            </md-fab-trigger>
+
+            <!--  Individual FAB options in the speed dial 
+                  Notice these are fab buttons. 
+                  md-mini is applied to make it a smaller sized FAB control
+            -->
+            <md-fab-actions>
+                <md-button class="md-fab md-primary md-mini" aria-label="Bluetooth Settings">
+                    <!-- Each component provides descriptive text as tooltip
+                        Direction tooltip should appear is et by md-direction attribute.
+                     -->
+                    <md-tooltip md-direction="left">Bluetooth</md-tooltip>
+                    <md-icon md-svg-src="/images/ic_settings_bluetooth.svg"></md-icon>
+                </md-button>
+                <md-button class="md-fab md-primary md-mini" aria-label="Brightness Settings">
+                    <md-tooltip md-direction="left">Brightness</md-tooltip>
+                    <md-icon md-svg-src="/images/ic_settings_brightness.svg"></md-icon>
+                </md-button>
+                <md-button class="md-fab md-primary md-mini" aria-label="Display Settings">
+                    <md-tooltip md-direction="left">Display Overscan</md-tooltip>
+                    <md-icon md-svg-src="/images/ic_settings_overscan.svg"></md-icon>
+                </md-button>
+                <md-button class="md-fab md-primary md-mini" aria-label="Voice Settings">
+                    <md-tooltip md-direction="left">Voice</md-tooltip>
+                    <md-icon md-svg-src="/images/ic_settings_voice.svg"></md-icon>
+                </md-button>
+            </md-fab-actions>
+        </md-fab-speed-dial>
+    </md-content>
+
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+
+</html>

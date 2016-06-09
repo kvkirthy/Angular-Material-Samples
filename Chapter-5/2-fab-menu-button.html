@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <title>Fab Menu Sample</title>
+    <style>
+        pre {
+            background-color: lightgray
+        }
+    </style>
+</head>
+
+<body ng-app="sampleApp" layout="column">
+    <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>FAB Menu Sample</h3>
+    </md-toolbar>
+    <md-content layout-padding flex>
+        <!--
+            A logic outside the FAB Menu can control opening or clossing the component.
+            Following is a switch, but it could be more sophisticated logic. When the a condition is true, toggle open/close the FAB Menu
+        -->
+        <md-switch ng-model="isOpen">Control opening/closing the menu outside the FAB toolbar</md-switch>
+        
+        
+        <!-- 
+                Use md-fab-toolbar element to create a fab menu 
+                It decides position and the direction menu expands
+            -->
+        <md-fab-toolbar md-open="isOpen" class="md-fab-top-right" md-direction="left">
+            <!--
+                    The FAB button that triggers the menu is encapsulated in md-fab-trigger directive.
+                -->
+            <md-fab-trigger class="align-with-text">
+                <md-button aria-label="Settings" class="md-fab md-primary">
+                    <md-icon md-svg-src="images/ic_settings.svg"></md-icon>
+                </md-button>
+            </md-fab-trigger>
+
+            <!--
+                    The FAB toolbar options are in md-toolbar, same element used for a regular toolbar.
+                -->
+            <md-toolbar>
+                <md-fab-actions class="md-toolbar-tools">
+                    <md-button aria-label="Bluetooth Settings" class="md-icon-button">
+                        <!-- Notice options created for FAB Menu are icon buttons -->
+                        <md-icon md-svg-src="images/ic_settings_bluetooth.svg"></md-icon>
+                    </md-button>
+                    <md-button aria-label="Brightness Settings" class="md-icon-button">
+                        <md-icon md-svg-src="images/ic_settings_brightness.svg"></md-icon>
+                        </md-icon>
+                    </md-button>
+                    <md-button aria-label="Overscan Settings" class="md-icon-button">
+                        <md-icon md-svg-src="images/ic_settings_overscan.svg"></md-icon>
+                    </md-button>
+                </md-fab-actions>
+            </md-toolbar>
+        </md-fab-toolbar>
+        <h3>Code Snippet</h3>
+        <pre>
+            <code>
+        &lt;!--
+            A logic outside the FAB Menu can control opening or clossing the component.
+            Following is a switch, but it could be more sophisticated logic. When the a condition is true, toggle open/close the FAB Menu
+        --&gt;
+        &lt;md-switch ng-model=&quot;isOpen&quot;&gt;Control opening/closing the menu outside the FAB toolbar&lt;/md-switch&gt;
+        
+        
+        &lt;!-- 
+                Use md-fab-toolbar element to create a fab menu 
+                It decides position and the direction menu expands
+            --&gt;
+        &lt;md-fab-toolbar md-open=&quot;isOpen&quot; class=&quot;md-fab-top-right&quot; md-direction=&quot;left&quot;&gt;
+            &lt;!--
+                    The FAB button that triggers the menu is encapsulated in md-fab-trigger directive.
+                --&gt;
+            &lt;md-fab-trigger class=&quot;align-with-text&quot;&gt;
+                &lt;md-button aria-label=&quot;Settings&quot; class=&quot;md-fab md-primary&quot;&gt;
+                    &lt;md-icon md-svg-src=&quot;images/ic_settings.svg&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+            &lt;/md-fab-trigger&gt;
+
+            &lt;!--
+                    The FAB toolbar options are in md-toolbar, same element used for a regular toolbar.
+                --&gt;
+            &lt;md-toolbar&gt;
+                &lt;md-fab-actions class=&quot;md-toolbar-tools&quot;&gt;
+                    &lt;md-button aria-label=&quot;Bluetooth Settings&quot; class=&quot;md-icon-button&quot;&gt;
+                        &lt;!-- Notice options created for FAB Menu are icon buttons --&gt;
+                        &lt;md-icon md-svg-src=&quot;images/ic_settings_bluetooth.svg&quot;&gt;&lt;/md-icon&gt;
+                    &lt;/md-button&gt;
+                    &lt;md-button aria-label=&quot;Brightness Settings&quot; class=&quot;md-icon-button&quot;&gt;
+                        &lt;md-icon md-svg-src=&quot;images/ic_settings_brightness.svg&quot;&gt;&lt;/md-icon&gt;
+                        &lt;/md-icon&gt;
+                    &lt;/md-button&gt;
+                    &lt;md-button aria-label=&quot;Overscan Settings&quot; class=&quot;md-icon-button&quot;&gt;
+                        &lt;md-icon md-svg-src=&quot;images/ic_settings_overscan.svg&quot;&gt;&lt;/md-icon&gt;
+                    &lt;/md-button&gt;
+                &lt;/md-fab-actions&gt;
+            &lt;/md-toolbar&gt;
+        &lt;/md-fab-toolbar&gt;                
+            </code>
+        </pre>
+    </md-content>
+
+
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    
+    <style>
+        pre{
+            background-color: lightgray;
+        }
+    </style>
+
+	<title>Angular Material Sample</title>
+</head>
+<body ng-app="sampleApp" ng-cloak>
+        <md-toolbar layout-padding class="md-toolbar-tools">
+        <h3>Slider - Form Fields Samples</h3>
+    </md-toolbar>
+    <md-content flex layout="row" layout-padding>
+        <div flex ng-controller="selectSampleController" layout="column">            
+             
+             <!-- 
+                 Use md-slider for rating like scenarios
+             
+             -->
+
+                <div><strong>Show your love for a Superhero</strong></div>
+                
+                <div ng-repeat="hero in superHeroes" layout="column">
+                    <strong flex="35">{{hero.name}}</strong>
+                    <div>
+                        <md-slider flex="65" min="1" max="10" step="0.5" ng-model="hero.rating" aria-label="Rate your Superhero"></md-slider> 
+                        <div>{{hero.rating || 'Unrated'}} on a scale of 10</div>
+                        <md-divider></md-divider>
+                    </div>
+                    <div>&nbsp;</div>
+                </div>
+                
+                <pre>
+                    <code>
+              
+             &lt;!-- 
+                 Use md-slider for rating like scenarios
+             
+             --&gt;
+
+                &lt;div&gt;&lt;strong&gt;Show your love for a Superhero&lt;/strong&gt;&lt;/div&gt;
+                
+                &lt;div ng-repeat=&quot;hero in superHeroes&quot; layout=&quot;column&quot;&gt;
+                    &lt;strong flex=&quot;35&quot;&gt;{{hero.name}}&lt;/strong&gt;
+                    &lt;div&gt;
+                        &lt;md-slider flex=&quot;65&quot; min=&quot;1&quot; max=&quot;10&quot; step=&quot;0.5&quot; ng-model=&quot;hero.rating&quot; aria-label=&quot;Rate your Superhero&quot;&gt;&lt;/md-slider&gt; 
+                        &lt;div&gt;{{hero.rating || 'Unrated'}} on a scale of 10&lt;/div&gt;
+                        &lt;md-divider&gt;&lt;/md-divider&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+                &lt;/div&gt;
+                                       
+                    </code>
+                </pre>
+                
+            
+            </div>
+    </md-content>
+
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <style>
+        pre {
+            background-color: lightgray;
+        }
+        
+        .pink {
+            background-color: lightpink;
+        }
+        
+        .green {
+            background-color: lightgreen;
+        }
+        
+        .blue {
+            background-color: lightblue;
+        }
+        
+        .yellow {
+            background-color: lightyellow;
+        }
+        
+        .gray {
+            background-color: lightgray
+        }
+    </style>
+
+    <title>Lists Sample</title>
+</head>
+
+<body ng-app="sampleApp" ng-cloak layout="column">
+
+    <md-toolbar layout-padding>
+        <div class="md-toolbar-tools">
+            <h2>Grid Lists Sample</h2>
+        </div>
+    </md-toolbar>
+    <md-content layout-padding layout="column" ng-controller="listSampleController">
+
+        <div>
+            <!-- 
+              Three line list items with images
+            -->
+            <md-grid-list md-cols="3" md-row-height="300px">
+                <md-grid-tile ng-class="item.background" ng-click="null" ng-repeat="item in superheroes">
+                    <img style="max-width:100px" ng-src="{{item.imageUrl}}" />
+                    <md-grid-tile-footer layout-padding>
+                        <span>{{item.category}}</span>
+                    </md-grid-tile-footer>
+                    <md-grid-tile-header layout-padding>
+                        <h2>{{item.name}}</h2>
+                    </md-grid-tile-header>
+                </md-grid-tile>
+            </md-grid-list>
+        </div>
+        <pre>
+            <code>
+         &lt;!-- 
+            Two line list items with images
+        --&gt;
+        &lt;md-grid-list md-cols=&quot;2&quot; md-row-height=&quot;300px&quot;&gt;
+            &lt;md-grid-tile ng-class=&quot;item.background&quot; ng-click=&quot;null&quot; ng-repeat=&quot;item in superheroes&quot;&gt;
+                &lt;img style=&quot;max-width:100px&quot; ng-src=&quot;{{item.imageUrl}}&quot; /&gt;
+                &lt;md-grid-tile-footer layout-padding&gt;
+                    &lt;span&gt;{{item.category}}&lt;/span&gt;
+                &lt;/md-grid-tile-footer&gt;
+                &lt;md-grid-tile-header layout-padding&gt;
+                    &lt;h2&gt;{{item.name}}&lt;/h2&gt;
+                &lt;/md-grid-tile-header&gt;    
+            &lt;/md-grid-tile&gt;                                   
+        &lt;/md-grid-list&gt;               
+            </code>
+        </pre>
+
+
+
+
+
+    </md-content>
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+</html>

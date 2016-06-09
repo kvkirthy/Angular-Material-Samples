@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+
+
+
+    <title>Angular Material Sample</title>
+</head>
+
+<body ng-app="sampleApp" ng-controller="toolbarController">
+
+    <md-toolbar layout-padding>
+        <div class="md-toolbar-tools">
+
+            <md-button class="md-icon-button" ng-click="toggleLeftSidenav()" aria-label="Menu & Options">
+                <md-icon md-svg-src="/images/ic_menu_black_24px.svg" aria-label="Menu"></md-icon>
+            </md-button>
+
+            <h2>Angular Material - Samples</h2>
+            <span flex>&nbsp;</span>
+
+        </div>
+    </md-toolbar>
+
+    <md-sidenav ng-init="showLeftSidenav=true" md-is-open="showLeftSidenav" class="md-sidenav-left">
+        <md-toolbar layout-padding class="md-medium-tall md-toolbar-tools">
+            <h2 class="md-toolbar-tools">Chapters</h2>
+        </md-toolbar>
+        <md-content flex>
+            <md-list>
+                <md-list-item class="md-2-line" ng-click="null" ui-sref="home">
+                    <div class="md-list-item-text" layout="column"  layout-align="end end">
+                        <h3>Sample Help</h3>
+                        <h4>How are samples organized</h4>                        
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-2-line" ng-click="null" ui-sref="ch2">
+                    <div class="md-list-item-text" layout="column" layout-align="end end">
+                        <h3>Chapter 2</h3>
+                        <h4>Getting Started</h4>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-2-line" ng-click="null" ui-sref="ch3">
+                    <div class="md-list-item-text" layout="column" layout-align="end end">
+                        <h3>Chapter 3</h3>
+                        <h4>Layout</h4>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-2-line" ng-click="null" ui-sref="ch4">
+                    <div class="md-list-item-text" layout="column" layout-align="end end">
+                        <h3>Chapter 4</h3>
+                        <h4>Navigation & Container Elements</h4>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-2-line" ng-click="null" ui-sref="ch5">
+                    <div class="md-list-item-text" layout="column" layout-align="end end">
+                        <h3>Chapter 5</h3>
+                        <h4>Action Buttons</h4>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-2-line" ng-click="null" ui-sref="ch6">
+                    <div class="md-list-item-text" layout="column" layout-align="end end">
+                        <h3>Chapter 6</h3>
+                        <h4>Themes</h4>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-2-line" ng-click="null" ui-sref="ch7">
+                    <div class="md-list-item-text" layout="column" layout-align="end end">
+                        <h3>Chapter 7</h3>
+                        <h4>Forms</h4>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-2-line" ng-click="null" ui-sref="ch8">
+                    <div class="md-list-item-text" layout="column" layout-align="start end">
+                        <h3>Chapter 8</h3>
+                        <h4>Lists and Alerts</h4>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-2-line" ng-click="null" ui-sref="ch9">
+                    <div class="md-list-item-text" layout="column" layout-align="end end">
+                        <h3>Chapter 9</h3>
+                        <h4>Mobile Friendly Elements</h4>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-2-line" ng-click="null" ui-sref="ch10">
+                    <div class="md-list-item-text" layout="column" layout-align="end end">
+                        <h3>Chapter 10</h3>
+                        <h4>Icons and ARIA</h4>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-2-line" ng-click="null" ui-sref="ch11">
+                    <div class="md-list-item-text" layout="column" layout-align="end end">
+                        <h3>Chapter 11</h3>
+                        <h4>Miscellaneous</h4>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-2-line" ng-click="null" ui-sref="ch12">
+                    <div class="md-list-item-text" layout="column" layout-align="end end">
+                        <h3>Chapter 12</h3>
+                        <h4>Responsive Design Patterns</h4>
+                    </div>
+                </md-list-item>
+
+            </md-list>
+
+        </md-content>
+    </md-sidenav>
+    <md-content layout-padding layout="row" flex layout-align="start end">
+        <div flex ui-view flex></div>
+        <div flex="15" hide show-gt-sm></div>
+    </md-content>
+
+    <script>
+        angular.module("sampleApp", ["ngMaterial", "ui.router"])
+            .config(function($stateProvider, $urlRouterProvider) { 
+                 $urlRouterProvider.otherwise("/home");
+
+                 $stateProvider.state('home',{
+                     url: '/home',
+                     template:"<h2>Samples</h2>"
+                 })
+                  .state('ch2',{
+                     url: '/ch2',
+                     templateUrl:"Chapter-2/index.tpl.html",
+                     controller: function($scope){
+                         $scope.open = function(url){
+                             window.open(url, "ch2")
+                         }
+                     }
+                 })
+                  .state('ch3',{
+                     url: '/ch3',
+                     templateUrl:"Chapter-3/index.tpl.html",
+                     controller: function($scope){
+                         $scope.open = function(url){
+                             window.open(url, "ch3")
+                         }
+                     }
+                 })
+                 .state('ch4',{
+                     url: '/ch4',
+                     templateUrl:"Chapter-4/index.tpl.html",
+                     controller: function($scope){
+                         $scope.open = function(url){
+                             window.open(url, "ch4")
+                         }
+                     }
+                 })
+                 .state('ch5',{
+                     url: '/ch5',
+                     templateUrl:"Chapter-5/index.tpl.html",
+                     controller: function($scope){
+                         $scope.open = function(url){
+                             window.open(url, "ch5")
+                         }
+                     }
+                 })
+                 .state('ch6',{
+                     url: '/ch6',
+                     templateUrl:"Chapter-6/index.tpl.html",
+                     controller: function($scope){
+                         $scope.open = function(url){
+                             window.open(url, "ch6")
+                         }
+                     }
+                 })
+                 .state('ch7',{
+                     url: '/ch7',
+                     templateUrl:"Chapter-7/index.tpl.html",
+                     controller: function($scope){
+                         $scope.open = function(url){
+                             window.open(url, "ch7")
+                         }
+                     }
+                 })
+                 .state('ch8',{
+                     url: '/ch8',
+                     templateUrl:"Chapter-8/index.tpl.html",
+                     controller: function($scope){
+                         $scope.open = function(url){
+                             window.open(url, "ch8")
+                         }
+                     }
+                 })
+                 .state('ch9',{
+                     url: '/ch9',
+                     templateUrl:"Chapter-9/index.tpl.html",
+                     controller: function($scope){
+                         $scope.open = function(url){
+                             window.open(url, "ch9")
+                         }
+                     }
+                 })
+                 .state('ch10',{
+                     url: '/ch10',
+                     templateUrl:"Chapter-10/index.tpl.html",
+                     controller: function($scope){
+                         $scope.open = function(url){
+                             window.open(url, "ch10")
+                         }
+                     }
+                 })
+                 .state('ch11',{
+                     url: '/ch11',
+                     templateUrl:"Chapter-11/index.tpl.html",
+                     controller: function($scope){
+                         $scope.open = function(url){
+                             window.open(url, "ch11")
+                         }
+                     }
+                 })
+                 .state('ch12',{
+                     url: '/ch12',
+                     templateUrl:"Chapter-12/index.tpl.html",
+                     controller: function($scope){
+                         $scope.open = function(url){
+                             window.open(url, "ch12")
+                         }
+                     }
+                 })
+                 ;  
+            })
+            .controller("toolbarController", function($scope){
+                $scope.showleftSidenav = true;
+                $scope.toggleLeftSidenav = function(){
+                    $scope.showLeftSidenav = (!$scope.showLeftSidenav);
+                }
+            })
+        ;
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.0.8/angular-material.css">
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <style>
+        pre{
+            background-color: lightgray;
+        }
+    </style>
+
+	<title>E6 Angular Material Sample</title>
+</head>
+<body ng-app="sampleApp" ng-cloak layout="column">
+    
+    <script>
+        angular.module("sampleApp", ["ngMaterial"])
+           .controller('swipeSampleController', function($scope){
+              $scope.swipeHandler = function(){
+                  console.log("Swiped !");
+              } 
+           });
+    </script>
+
+    <md-toolbar layout-padding>
+        <div class="md-toolbar-tools">
+            <h2>Subheader sample</h2>           
+        </div>
+    </md-toolbar>
+
+    <md-content layout-padding layout="column" ng-controller="swipeSampleController">
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>        
+        <md-subheader> Sub Header</md-subheader>  
+        
+        <code>
+            <pre>
+        &lt;h1&gt;Heading 1&lt;/h1&gt;
+        &lt;h2&gt;Heading 2&lt;/h2&gt;
+        &lt;h3&gt;Heading 3&lt;/h3&gt;
+        &lt;h4&gt;Heading 4&lt;/h4&gt;
+        &lt;h5&gt;Heading 5&lt;/h5&gt;
+        &lt;h6&gt;Heading 6&lt;/h6&gt;        
+        &lt;md-subheader&gt; Sub Header&lt;/md-subheader&gt;  
+            </pre>
+        </code>
+
+        
+     </md-content>
+
+
+   
+
+</body>
+</html>

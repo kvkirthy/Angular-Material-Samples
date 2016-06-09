@@ -1,0 +1,209 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        pre{
+            background-color: lightgrey;
+        }
+    </style>
+    <title>Angular Material Sample</title>
+</head>
+
+<!-- 
+    bootstrap to using the sampleApp module. Refer to app/main.js
+-->
+
+<body ng-app="sampleApp" layout="column" layout-fill>
+    <div ng-controller="sidenavController">
+
+        <!-- 
+           -- For a large toolbar, use CSS class md-tall
+           -- md-scroll-shrink enables toolbar to hide or collapse as content in md-content scrolls up.
+           -- Use CSS class md-toolbar-tools-bottom for alignment of elements at the bottom of the toolbar.
+           
+           -- Following is basic usage of Toolbar 
+           -- Identify labels and buttons on the toolbar with the CSS class md-toolbar-tools
+           -- The layout-padding attribute helps add padding around the elements.
+       -->
+
+        <md-toolbar md-scroll-shrink="true" layout-padding class="md-tall md-toolbar-tools-bottom">
+            <span flex></span>
+            <div class="md-toolbar-tools">
+                <!--
+                    Add action button for Sidenav. 
+                -->
+                <md-button class="md-icon-button" ng-click="showContentSidenav()" aria-label="Menu & Options">
+                    <md-icon md-svg-src="/images/ic_menu_black_24px.svg" aria-label="Menu"></md-icon>
+                </md-button>
+
+                <h2>Sidenav</h2>
+                <span flex>&nbsp;</span>
+
+                <!--
+                    For page level actions, add icon button
+                    The CSS class md-icon-button renders the button without label and only a rounded icon.
+                    ng-click is null. It doesn't perform any action for this sample.
+                    ARIA label provides descriptive text for accessibility reasons.
+                    ICON image is loaded through md-icon directive
+                -->
+
+                <!--
+                    This sample has toggleRightSidenav() on click. It would toggle right sidenav on click.
+                -->
+                <md-button class="md-icon-button" ng-click="toggleRightSidenav()" aria-label="Page Settings">
+                    <md-icon md-svg-src="/images/ic_settings_white_24px.svg" aria-label="Settings"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <!--
+            -- Wrap scoll enabled content in md-content directive
+            -- Using layout="column" aligns all control vertically within the directive.
+            -- The layout-padding attribute helps add padding around the elements.
+         -->
+        <md-content layout="row" layout-padding>
+            
+            <!--
+                Sidenav created along with the content
+                Layout of the md-content need to be row, for it to be part of the row.
+            -->
+            <md-sidenav md-component-id='content-sidenav' flex md-is-locked-open="true" class="md-sidenav-left" layout="column" layout-padding>
+                <h4>side nav content</h4>
+                <div flex>More options here.</div>
+            </md-sidenav>
+            
+            <div layout-padding flex="80">
+               <h3>Scroll enabled content</h3>
+               <pre>
+                   <code>
+    &lt;div ng-controller=&quot;sidenavController&quot;&gt;
+
+        &lt;!-- 
+           -- For a large toolbar, use CSS class md-tall
+           -- md-scroll-shrink enables toolbar to hide or collapse as content in md-content scrolls up.
+           -- Use CSS class md-toolbar-tools-bottom for alignment of elements at the bottom of the toolbar.
+           
+           -- Following is basic usage of Toolbar 
+           -- Identify labels and buttons on the toolbar with the CSS class md-toolbar-tools
+           -- The layout-padding attribute helps add padding around the elements.
+       --&gt;
+
+        &lt;md-toolbar md-scroll-shrink=&quot;true&quot; layout-padding class=&quot;md-tall md-toolbar-tools-bottom&quot;&gt;
+            &lt;span flex&gt;&lt;/span&gt;
+            &lt;div class=&quot;md-toolbar-tools&quot;&gt;
+                &lt;!--
+                    Add action button for Sidenav. 
+                --&gt;
+                &lt;md-button class=&quot;md-icon-button&quot; ng-click=&quot;showContentSidenav()&quot; aria-label=&quot;Menu &amp; Options&quot;&gt;
+                    &lt;md-icon md-svg-src=&quot;/images/ic_menu_black_24px.svg&quot; aria-label=&quot;Menu&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+
+                &lt;h2&gt;Sidenav&lt;/h2&gt;
+                &lt;span flex&gt;&amp;nbsp;&lt;/span&gt;
+
+                &lt;!--
+                    For page level actions, add icon button
+                    The CSS class md-icon-button renders the button without label and only a rounded icon.
+                    ng-click is null. It doesn't perform any action for this sample.
+                    ARIA label provides descriptive text for accessibility reasons.
+                    ICON image is loaded through md-icon directive
+                --&gt;
+
+                &lt;!--
+                    This sample has toggleRightSidenav() on click. It would toggle right sidenav on click.
+                --&gt;
+                &lt;md-button class=&quot;md-icon-button&quot; ng-click=&quot;toggleRightSidenav()&quot; aria-label=&quot;Page Settings&quot;&gt;
+                    &lt;md-icon md-svg-src=&quot;/images/ic_settings_white_24px.svg&quot; aria-label=&quot;Settings&quot;&gt;&lt;/md-icon&gt;
+                &lt;/md-button&gt;
+            &lt;/div&gt;
+        &lt;/md-toolbar&gt;
+
+        &lt;!--
+            -- Wrap scoll enabled content in md-content directive
+            -- Using layout=&quot;column&quot; aligns all control vertically within the directive.
+            -- The layout-padding attribute helps add padding around the elements.
+         --&gt;
+        &lt;md-content layout=&quot;row&quot; layout-padding&gt;
+            
+            &lt;!--
+                Sidenav created along with the content
+                Layout of the md-content need to be row, for it to be part of the row.
+            --&gt;
+            &lt;md-sidenav md-component-id='content-sidenav' flex md-is-locked-open=&quot;true&quot; class=&quot;md-sidenav-left&quot; layout=&quot;column&quot; layout-padding&gt;
+                &lt;h4&gt;side nav content&lt;/h4&gt;
+                &lt;div flex&gt;More options here.&lt;/div&gt;
+            &lt;/md-sidenav&gt;
+            
+            &lt;div layout-padding flex=&quot;80&quot;&gt;
+               &lt;h3&gt;Scroll enabled content&lt;/h3&gt;
+                Lorem ipsum dolor sit amet, RxJS - Reactive Extensions JavaScript is dealing with streams of data asynchronously. Observables
+                is one of the important aspects of RxJS. Observable results in stream of data. Many times, for understanding
+                Observables they are compared to P
+            &lt;/div&gt;
+        &lt;/md-content&gt;
+    &lt;/div&gt;                       
+                   </code>
+               </pre>
+                Lorem ipsum dolor sit amet, RxJS - Reactive Extensions JavaScript is dealing with streams of data asynchronously. Observables
+                is one of the important aspects of RxJS. Observable results in stream of data. Many times, for understanding
+                Observables they are compared to Promises. Both deal with asynchronous actions. Difference is unlike Observable,
+                Promise is done once the asynchronous operation is complete. Consider a Http call. Promise is complete once
+                response is obtained (or the call errors out). With Obserables data or items are emitted continuously like
+                a stream.
+                <br/> Where do we see stream of data in JavaScript, especially in a browser? I could think of couple of examples,
+                Data bound to UI controls: As user interacts with the UI, edits a text field, selects an option in the drop
+                down, and continues to do so, there are series of changes emitted from the control. Web Socket - a persistent
+                connection. Server could send a stream of data. As long as the connection is open, browser (or other clients)
+                could continue to obtain new pieces of data. Unlike a XHR, it's not done once we receive response soon after
+                establishing connection. Another difference between Promises and Observables is that, Observables can be
+                unsubscribed (cancelled).
+                <br/> In the blog, I'm planning to write about "Typeahead search". Here the UI control is an Observable.
+                It emits data items. As user starts keying in search term into the text box results are updated. It triggers
+                XHR request with each change or set of key strokes in the text field. Show results using the latest response.
+                Cancel in-progress, old and obsolete XHRs.
+                <br/> Sample is using AngularJS (v1.x) and RxJS libraries to code this functionality. Run with Angular 1.x
+                bower install angular angular-rx
+                <br/> Reference the libraries
+                <br/> Bootstrap Angular module with "rx" module as a dependency.
+                <br/> Consider the following template for text field. This is where user keys in the search term.
+                <br/> Notice we are calling "search()" controller function (on $scope) for changes detected with the text
+                field. In the controller inject "rx" service for creating an Observable and $http for making API calls.
+                <br/> Create an observable function using rx service API,
+                <br/> RxJS has galore of operators (which are functions in JS). Before I describe one such operator, remember
+                an Observable emits items or data. In our example as and when user keys in values into text field, observable
+                is emitting the text to all observers (subscribers). Each search term results in search result (from the
+                API). And we have series of results. That means we have Observables of Observables.
+                <br/> Consider following code, searchControlObservable = searchControlObservable
+                <br/> The callback for flatMapLatest is invoked for every emitted item of searchControlObservable (which
+                is result of text field change events). This in turn returns Observables out of XHR calls. These are Observables
+                from promises.
+                <br/> flatMap is an operator, useful in such scenarios where we have Observables of Observables. It transforms
+                and merges. A variant of flatMap is flatMapLatest. In our scenario only the latest search result matters.
+                Previous ones could be ignored. So it stops or unsubscribes from previous Observables. As stated earlier
+                unlike Promises, Observables could be stopped or unsubscribed from.
+                <br/> Also notice debounce(500); It will hold off emitting items for 500 ms. This will help control number
+                of XHR calls. We can increase / decrease the number depending on the requirement, acceptable limit for load
+                on the API etc. Ideally we want search calls made for considerable text keyed-in, instead of every little
+                change.
+            </div>
+        </md-content>
+    </div>
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+</html>

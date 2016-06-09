@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <style>
+        pre{
+            background-color: lightgrey;
+        }
+    </style>
+
+	<title>E6 Angular Material Sample</title>
+</head>
+<body ng-app="sampleApp" layout="column" md-theme="aCustomPaletteSample" flex>
+        <md-toolbar>
+            <div class="md-toolbar-tools" layout-padding>
+                <h2>Dinosaurs of the world.</h2>
+            </div>
+        </md-toolbar>
+        
+         <md-content flex layout-padding>
+                <strong>This page is dedicated to Saurischia.</strong>
+                
+                <pre>
+                    <code>
+                        
+ // Create a custom palette as follows         
+                       
+ angular.module('sampleApp', ['ngMaterial', 'ngMessages'])
+.config(function($mdThemingProvider){
+    
+    
+    $mdThemingProvider
+            .theme('aCustomBackgroundTheme')
+            .backgroundPalette('lime');
+            
+    $mdThemingProvider
+        .definePalette('aCustomPalette', {
+            '50': '#ff7b82',
+            '100': '#ff626a',
+            '200': '#ff4852',
+            '300': '#ff2f3a',
+            '400': '#ff1522',
+            '500': '#fb000d',
+            '600': '#e1000c',
+            '700': '#c8000a',
+            '800': '#ae0009',
+            '900': '#950008',
+            'A100': '#ff959a',
+            'A200': '#ffaeb3',
+            'A400': '#ffc8cb',
+            'A700': '#7b0006',
+            'contrastDefaultColor': 'dark'
+
+    });
+    
+    $mdThemingProvider
+            .theme('aCustomPaletteSample')
+            .primaryPalette('aCustomPalette');                       
+                    </code>
+                </pre>
+         </md-content>
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+</html>

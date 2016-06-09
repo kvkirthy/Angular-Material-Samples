@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <title>FAB Speed Dial</title>
+
+    <style>
+        section {
+            background-color: lightblue
+        }
+        
+        pre {
+            background-color: lightgray
+        }
+    </style>
+</head>
+
+<body ng-app="sampleApp" layout="column">
+    <md-toolbar layout-padding class="md-toolbar-tools" layout="row" ng-cloak>
+        <h3>Menu Sample</h3>
+        <span>&nbsp;</span>
+        <!-- Page level actions positioned on toolbar. Actions are collapsed into a menu -->
+        <md-menu md-position-mode="target-right target" md-offset="0 40">
+            <!-- Trigger for menu -->
+            <md-button md-menu-origin ng-click="$mdOpenMenu()">
+                Actions
+            </md-button>
+            <!-- Individual menu options and buttons-->
+            <md-menu-content width="8">
+                <md-menu-item>
+                    <md-button md-menu-align-target>
+                        Share
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button md-menu-align-target>
+                        Tag the page
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button md-menu-align-target>
+                        Copy link
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <!-- Separator for better grouping -->
+                    <md-divider></md-divider>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button md-menu-align-target>
+                        Help
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </md-toolbar>
+    <md-content layout-padding flex>
+        <strong> Menu on toolbar- code snippet.</strong> Click on the actions menu button in the toolbar to pull down a menu.
+        <pre>
+            <code>
+                &lt;md-menu md-position-mode=&quot;target-right target&quot; md-offset=&quot;0 40&quot;&gt;
+                    &lt;!-- Trigger for menu --&gt;
+                    &lt;md-button md-menu-origin ng-click=&quot;$mdOpenMenu()&quot;&gt;
+                        Actions
+                    &lt;/md-button&gt;
+                    &lt;!-- Individual menu options and buttons--&gt;
+                    &lt;md-menu-content width=&quot;8&quot;&gt;
+                        &lt;md-menu-item&gt;
+                            &lt;md-button md-menu-align-target&gt;
+                                Share
+                            &lt;/md-button&gt;
+                        &lt;/md-menu-item&gt;
+                        &lt;md-menu-item&gt;
+                            &lt;md-button md-menu-align-target&gt;
+                                Tag the page
+                            &lt;/md-button&gt;
+                        &lt;/md-menu-item&gt;
+                        &lt;md-menu-item&gt;
+                            &lt;md-button md-menu-align-target&gt;
+                                Copy link
+                            &lt;/md-button&gt;
+                        &lt;/md-menu-item&gt;
+                        &lt;md-menu-item&gt;
+                            &lt;!-- Separator for grouping --&gt;
+                            &lt;md-divider&gt;&lt;/md-divider&gt;
+                        &lt;/md-menu-item&gt;
+                        &lt;md-menu-item&gt;
+                            &lt;md-button md-menu-align-target&gt;
+                                Help
+                            &lt;/md-button&gt;
+                        &lt;/md-menu-item&gt;
+                    &lt;/md-menu-content&gt;
+                &lt;/md-menu&gt;              
+            </code>
+        </pre>
+    </md-content>
+    <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+</body>
+
+
+</html>

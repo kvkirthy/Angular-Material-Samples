@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <link rel="stylesheet" href="styles/material.css">
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+
+	<title>E6 Angular Material Sample</title>
+</head>
+<body ng-app="sampleApp" ng-cloak layout="column">
+    
+    <script>
+        angular.module("sampleApp", ["ngMaterial", "material.svgAssetsCache"])
+            .config(function($mdIconProvider){
+               $mdIconProvider
+                .defaultIconSet('img/icons/sets/core-icons.svg', 24)
+                .iconSet('communication','img/icons/sets/communication-icons.svg',24)
+                .icon('account-circle','svg-icons/ic_account_circle.svg');
+            });
+    </script>
+
+    <md-toolbar layout-padding>
+        <div class="md-toolbar-tools">
+            <h2>SVG Icons Sample</h2>             
+        </div>
+    </md-toolbar>
+
+    <md-content layout-padding layout="row" flex="20" layout-padding>
+        <!-- Icon from default Icon Set -->
+        <md-icon md-svg-icon="account-balance" style="width:48px; height:48px; color:red" ></md-icon>
+        
+        <!-- icon from communication icon set -->
+        <md-icon md-svg-icon="communication:business" style="width:48px; height:48px; color:red" ></md-icon>
+        
+        <!-- Icon defined in the config function while bootstrapping the app -->
+        <md-icon md-svg-icon='account-circle' style="width:48px; height:48px; color:red" ></md-icon>
+        
+       
+     </md-content>
+     <span flex="80">
+         <pre>
+             <code>
+            // define icons and icon sets for consumption by md-icon directive
+            angular.module("sampleApp", ["ngMaterial", "material.svgAssetsCache"])
+            .config(function($mdIconProvider){
+               $mdIconProvider
+                .defaultIconSet('img/icons/sets/core-icons.svg', 24)
+                .iconSet('communication','img/icons/sets/communication-icons.svg',24)
+                .icon('account-circle','svg-icons/ic_account_circle.svg');
+            });
+            
+            <strong>Usage below,</strong>
+        &lt;!-- Icon from default Icon Set --&gt;
+        &lt;md-icon md-svg-icon=&quot;account-balance&quot; style=&quot;width:48px; height:48px; color:red&quot; &gt;&lt;/md-icon&gt;
+        
+        &lt;!-- icon from communication icon set --&gt;
+        &lt;md-icon md-svg-icon=&quot;communication:business&quot; style=&quot;width:48px; height:48px; color:red&quot; &gt;&lt;/md-icon&gt;
+        
+        &lt;!-- Icon defined in the config function while bootstrapping the app --&gt;
+        &lt;md-icon md-svg-icon='account-circle' style=&quot;width:48px; height:48px; color:red&quot; &gt;&lt;/md-icon&gt;
+            
+             </code>
+         </pre>
+         
+     </span>
+
+   
+
+</body>
+</html>

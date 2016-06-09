@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <style>
+        pre{
+            background-color: lightgray;
+        }
+    </style>
+
+	<title>E6 Angular Material Sample</title>
+</head>
+<body ng-app="sampleApp" ng-cloak layout="column">
+   
+    
+    <script type="text/ng-template" id="/bottom-sheet-template.html">
+        <md-bottom-sheet class="md-grid">
+             <md-subheader>
+                Choose Login Mechanism
+            </md-subheader>
+            <md-list >
+                <md-list-item>
+                    <div>
+                        <md-button ng-click="defaultAuthenticationHandler()">
+                             <md-icon md-svg-src="/images/ic_verified_user.svg" style="width:48px; height:48px; color:red;"></md-icon> <br/>
+                             <sup>User Id & Password</sup>
+                        </md-button>    
+                    </div>
+                </md-list-item>
+                <md-list-item>
+                    <div>
+                        <md-button ng-click="fingerprintHandler()">
+                            <md-icon md-svg-src="/images/ic_fingerprint.svg" style="width:48px; height:48px; color:red;"></md-icon><br/>
+                             <sup>Fingerprint</sup>
+                        </md-button>    
+                    </div>
+                </md-list-item>
+                <md-list-item>
+                    <div>
+                        <md-button ng-click="facialRecognitionHandler()">
+                            <md-icon md-svg-src="/images/ic_camera.svg" style="width:48px; height:48px; color:red;"></md-icon><br/>
+                             <sup>Facial Recognition</sup>
+                        </md-button>
+                    </div>
+                </md-list-item>
+            </md-list>
+           </md-bottom-sheet>
+    </script>
+    
+    <script>
+        angular.module("sampleApp", ["ngMaterial"])
+            .controller('sampleController',function($scope, $mdBottomSheet){
+                $scope.showBottomSheet = function(){
+                    $mdBottomSheet.show({
+                       templateUrl: "/bottom-sheet-template.html",
+                       controller: function($scope){
+                           $scope.defaultAuthenticationHandler = function(){
+                               console.log("Take user to login form");
+                                $mdBottomSheet.hide();                                
+                           }
+                           $scope.fingerprintHandler = function(){
+                              console.log("Let's authenticate user by fingerprints");  
+                                $mdBottomSheet.hide();                               
+                           };
+                           $scope.facialRecognitionHandler = function(){
+                                console.log("Use camera and identify the user"); 
+                                $mdBottomSheet.hide(); 
+                           };
+                       },
+                       disableBackdrop: true
+                    }).then(function(){
+                        console.log("Promise resolved");
+                    }, function(){
+                        console.log("Promise rejected");
+                    });
+                };
+            })
+    </script>
+
+    <md-toolbar layout-padding>
+        <div class="md-toolbar-tools">
+            <h2>Bottom Sheet Grid View</h2>             
+        </div>
+    </md-toolbar>
+
+    <md-content layout-padding layout="column" flex layout-padding ng-controller="sampleController">
+       <md-button ng-click="showBottomSheet()" class="md-primary">Login - Pull bottom sheet.</md-button>
+       <pre>
+           <code>
+               <strong>Template code below,</strong>
+    &lt;script type=&quot;text/ng-template&quot; id=&quot;/bottom-sheet-template.html&quot;&gt;
+        &lt;md-bottom-sheet class=&quot;md-grid&quot;&gt;
+             &lt;md-subheader&gt;
+                Choose Login Mechanism
+            &lt;/md-subheader&gt;
+            &lt;md-list &gt;
+                &lt;md-list-item&gt;
+                    &lt;div&gt;
+                        &lt;md-button ng-click=&quot;defaultAuthenticationHandler()&quot;&gt;
+                             &lt;md-icon md-svg-src=&quot;images/ic_verified_user.svg&quot; style=&quot;width:48px; height:48px; color:red;&quot;&gt;&lt;/md-icon&gt; &lt;br/&gt;
+                             &lt;sup&gt;User Id &amp; Password&lt;/sup&gt;
+                        &lt;/md-button&gt;    
+                    &lt;/div&gt;
+                &lt;/md-list-item&gt;
+                &lt;md-list-item&gt;
+                    &lt;div&gt;
+                        &lt;md-button ng-click=&quot;fingerprintHandler()&quot;&gt;
+                            &lt;md-icon md-svg-src=&quot;images/ic_fingerprint.svg&quot; style=&quot;width:48px; height:48px; color:red;&quot;&gt;&lt;/md-icon&gt;&lt;br/&gt;
+                             &lt;sup&gt;Fingerprint&lt;/sup&gt;
+                        &lt;/md-button&gt;    
+                    &lt;/div&gt;
+                &lt;/md-list-item&gt;
+                &lt;md-list-item&gt;
+                    &lt;div&gt;
+                        &lt;md-button ng-click=&quot;facialRecognitionHandler()&quot;&gt;
+                            &lt;md-icon md-svg-src=&quot;images/ic_camera.svg&quot; style=&quot;width:48px; height:48px; color:red;&quot;&gt;&lt;/md-icon&gt;&lt;br/&gt;
+                             &lt;sup&gt;Facial Recognition&lt;/sup&gt;
+                        &lt;/md-button&gt;
+                    &lt;/div&gt;
+                &lt;/md-list-item&gt;
+            &lt;/md-list&gt;
+           &lt;/md-bottom-sheet&gt;
+    &lt;/script&gt;               
+    
+    <strong>Controller,</strong>
+            angular.module("sampleApp", ["ngMaterial"])
+            .controller('sampleController',function($scope, $mdBottomSheet){
+                $scope.showBottomSheet = function(){
+                    $mdBottomSheet.show({
+                       templateUrl: "/bottom-sheet-template.html",
+                       controller: function($scope){
+                           $scope.defaultAuthenticationHandler = function(){
+                               console.log("Take user to login form");
+                                $mdBottomSheet.hide();                                
+                           }
+                           $scope.fingerprintHandler = function(){
+                              console.log("Let's authenticate user by fingerprints");  
+                                $mdBottomSheet.hide();                               
+                           };
+                           $scope.facialRecognitionHandler = function(){
+                                console.log("Use camera and identify the user"); 
+                                $mdBottomSheet.hide(); 
+                           };
+                       },
+                       disableBackdrop: true
+                    }).then(function(){
+                        console.log("Promise resolved");
+                    }, function(){
+                        console.log("Promise rejected");
+                    });
+                };
+            })
+           </code>
+       </pre>
+     </md-content>
+
+   
+
+</body>
+</html>

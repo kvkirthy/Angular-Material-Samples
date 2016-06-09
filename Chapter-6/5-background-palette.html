@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    
+    <style>
+        pre{
+            background-color: lightgray;
+        }
+    </style>
+
+	<title>E6 Angular Material Sample</title>
+</head>
+<body ng-app="sampleApp" layout="column" md-theme="aCustomBackgroundTheme" flex>
+        <md-toolbar>
+            <div class="md-toolbar-tools" layout-padding>
+                <h2>Dinosaurs of the world.</h2>
+            </div>
+        </md-toolbar>
+        
+         <md-content flex layout-padding>
+                <strong>This page is dedicated to Saurischia.</strong>
+                
+                <pre>
+                    <code>
+     $mdThemingProvider
+            .theme('aCustomBackgroundTheme')
+            .backgroundPalette('lime');
+            
+ &lt;!-- choose the custom theme to be applied in markup --&gt;
+&lt;body ng-app=&quot;sampleApp&quot; layout=&quot;column&quot; md-theme=&quot;aCustomBackgroundTheme&quot; flex&gt;
+                                  
+                    </code>
+                </pre>
+         </md-content>
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+
+</body>
+</html>

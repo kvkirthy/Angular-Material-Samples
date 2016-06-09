@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    
+    <style>
+        pre{
+            background-color: lightgray;
+        }
+    </style>
+
+    <title>E6 Angular Material Sample</title>
+</head>
+
+<body ng-app="sampleApp" layout="column" flex>
+    <md-toolbar>
+        <div class="md-toolbar-tools" layout-padding class="md-accent">
+            <h2>Edit styles on UI Components</h2>
+        </div>
+    </md-toolbar>
+
+    <md-content flex layout-padding>
+        <div layout="column">        
+            
+            <div ng-init="switchVal=true"></div>
+            <div ng-init="animalSelected='Cow'"></div>
+            
+            <!-- Primary color overriding default color theme -->
+            <md-switch ng-model="switchVal" class="md-primary">Power On?</md-switch>
+            
+            <strong>Select an animal</strong>
+            <div>&nbsp;</div>
+            <md-radio-group class="md-primary" ng-model="animalSelected">
+                <md-radio-button value="Elephant">Elephant</md-radio-button>
+                <md-radio-button value="Cow">Cow</md-radio-button>
+                <md-radio-button value="Tiger" selected>Tiger</md-radio-button>
+                <md-radio-button value="Lion">Lion</md-radio-button>
+            </md-radio-group>
+        </div>
+        <pre>
+            <code>
+            &lt;!-- Primary color overriding default color theme --&gt;
+            &lt;md-switch ng-model=&quot;true&quot; class=&quot;md-primary&quot;&gt;Power On?&lt;/md-switch&gt;
+            
+            &lt;strong&gt;Select an animal&lt;/strong&gt;
+            &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+            &lt;md-radio-group class=&quot;md-primary&quot; ng-model=&quot;'Cow'&quot;&gt;
+                &lt;md-radio-button value=&quot;Elephant&quot;&gt;Elephant&lt;/md-radio-button&gt;
+                &lt;md-radio-button value=&quot;Cow&quot;&gt;Cow&lt;/md-radio-button&gt;
+                &lt;md-radio-button value=&quot;Tiger&quot; selected&gt;Tiger&lt;/md-radio-button&gt;
+                &lt;md-radio-button value=&quot;Lion&quot;&gt;Lion&lt;/md-radio-button&gt;
+            &lt;/md-radio-group&gt;
+
+            </code>
+        </pre>
+    </md-content>
+
+     <link rel="stylesheet" type="text/css" href="../bower_components/angular-material/angular-material.min.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+
+</body>
+
+</html>
