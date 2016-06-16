@@ -38,10 +38,10 @@ angular.module('sampleApp', ['ngMaterial'])
     .controller('transformSampleController', function ($scope) {
         $scope.superheroes = [
             { id: 1, name: "Iron Man", category: "Marvel", background: "pink", imageUrl: "img/ironman.png" },
-            { id: 2, name: "Mogli", category: "Disney", background: "green", imageUrl: "img/mogli.gif" },
+            { id: 2, name: "Mowgli", category: "Disney", background: "green", imageUrl: "img/mogli.gif" },
             { id: 3, name: "Spiderman", category: "Marvel", background: "blue", imageUrl: "img/spiderman.png" },
             { id: 4, name: "Superman", category: "DC Comics", background: "yellow", imageUrl: "img/superman.png" },
-            { id: 5, name: "Chota Bheem", category: "Indian", background: "gray", imageUrl: "img/Chotabheem.png" }
+            { id: 5, name: "Chhota Bheem", category: "Indian", background: "gray", imageUrl: "img/Chotabheem.png" }
         ];
     })
     ;
