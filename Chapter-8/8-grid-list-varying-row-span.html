@@ -67,13 +67,13 @@
                 Varying row span demo.
              --&gt;
             &lt;md-grid-list md-cols=&quot;3&quot; md-row-height=&quot;300px&quot;&gt;
-                &lt;md-grid-tile md-rowspan=&quot;{{($index===0)?2:1}}&quot; ng-class=&quot;item.background&quot; ng-click=&quot;null&quot; ng-repeat=&quot;item in superheroes&quot;&gt;
-                    &lt;img style=&quot;max-width:100px&quot; ng-src=&quot;{{item.imageUrl}}&quot; /&gt;
+                &lt;md-grid-tile md-rowspan=&quot;{&#8203;{($index===0)?2:1}}&quot; ng-class=&quot;item.background&quot; ng-click=&quot;null&quot; ng-repeat=&quot;item in superheroes&quot;&gt;
+                    &lt;img style=&quot;max-width:100px&quot; ng-src=&quot;{&#8203;{item.imageUrl}}&quot; /&gt;
                     &lt;md-grid-tile-footer layout-padding&gt;
-                        &lt;span&gt;{{item.category}}&lt;/span&gt;
+                        &lt;span&gt;{&#8203;{item.category}}&lt;/span&gt;
                     &lt;/md-grid-tile-footer&gt;
                     &lt;md-grid-tile-header layout-padding&gt;
-                        &lt;h2&gt;{{item.name}}&lt;/h2&gt;
+                        &lt;h2&gt;{&#8203;{item.name}}&lt;/h2&gt;
                     &lt;/md-grid-tile-header&gt;
                 &lt;/md-grid-tile&gt;
             &lt;/md-grid-list&gt;                

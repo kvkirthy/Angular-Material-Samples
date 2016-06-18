@@ -51,10 +51,10 @@
                 &lt;div&gt;&lt;strong&gt;Show your love for a Superhero&lt;/strong&gt;&lt;/div&gt;
                 
                 &lt;div ng-repeat=&quot;hero in superHeroes&quot; layout=&quot;column&quot;&gt;
-                    &lt;strong flex=&quot;35&quot;&gt;{{hero.name}}&lt;/strong&gt;
+                    &lt;strong flex=&quot;35&quot;&gt;{&#8203;{hero.name}}&lt;/strong&gt;
                     &lt;div&gt;
                         &lt;md-slider flex=&quot;65&quot; min=&quot;1&quot; max=&quot;10&quot; step=&quot;0.5&quot; ng-model=&quot;hero.rating&quot; aria-label=&quot;Rate your Superhero&quot;&gt;&lt;/md-slider&gt; 
-                        &lt;div&gt;{{hero.rating || 'Unrated'}} on a scale of 10&lt;/div&gt;
+                        &lt;div&gt;{&#8203;{hero.rating || 'Unrated'}} on a scale of 10&lt;/div&gt;
                         &lt;md-divider&gt;&lt;/md-divider&gt;
                     &lt;/div&gt;
                     &lt;div&gt;&amp;nbsp;&lt;/div&gt;

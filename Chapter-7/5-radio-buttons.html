@@ -36,12 +36,12 @@
                 <code>
 
             &lt;md-radio-group ng-model=&quot;radioSelectedSuperHero&quot;&gt;
-                &lt;md-radio-button ng-value=&quot;item&quot; ng-repeat=&quot;item in radioSuperheroes&quot;&gt;{{item.name}}&lt;/md-radio-button&gt;
+                &lt;md-radio-button ng-value=&quot;item&quot; ng-repeat=&quot;item in radioSuperheroes&quot;&gt;{&#8203;{item.name}}&lt;/md-radio-button&gt;
             &lt;/md-radio-group&gt;
             &lt;div&gt;
                 &lt;strong&gt;Favorite Super Hero&lt;/strong&gt;
                 &lt;div ng-repeat=&quot;item in checkSuperHeroes&quot;&gt;
-                     &lt;md-checkbox ng-change=&quot;runWhenSelected(item.isChecked)&quot; ng-model=&quot;item.isChecked&quot;&gt;{{item.name}}&lt;/md-checkbox&gt;  
+                     &lt;md-checkbox ng-change=&quot;runWhenSelected(item.isChecked)&quot; ng-model=&quot;item.isChecked&quot;&gt;{&#8203;{item.name}}&lt;/md-checkbox&gt;  
                 &lt;/div&gt;
             &lt;/div&gt;                   
                 </code>
@@ -90,10 +90,10 @@
                             }                    
                         --&gt;
                         &lt;div&gt;&amp;nbsp;&lt;/div&gt;
-                        &lt;div&gt;Selected: &lt;/div&gt;&lt;span ng-repeat=&quot;item in selectedSuperheroesCB&quot;&gt;{{item.name}} &amp;nbsp;&lt;/span&gt;
+                        &lt;div&gt;Selected: &lt;/div&gt;&lt;span ng-repeat=&quot;item in selectedSuperheroesCB&quot;&gt;{&#8203;{item.name}} &amp;nbsp;&lt;/span&gt;
                         &lt;div&gt;&amp;nbsp;&lt;/div&gt;
                         &lt;div ng-repeat=&quot;item in checkSuperHeroes&quot;&gt;
-                            &lt;md-checkbox ng-change=&quot;runWhenSelected(item)&quot; ng-model=&quot;item.isChecked&quot;&gt;{{item.name}}&lt;/md-checkbox&gt;  
+                            &lt;md-checkbox ng-change=&quot;runWhenSelected(item)&quot; ng-model=&quot;item.isChecked&quot;&gt;{&#8203;{item.name}}&lt;/md-checkbox&gt;  
                         &lt;/div&gt;
                     &lt;/div&gt;                    
                 </code>
